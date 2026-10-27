@@ -1,0 +1,12 @@
+{
+  "P01": "(i32.add (i32.add (local.get $a) (local.get $b)) (local.get $c))",
+  "P02": "(local $m i32)\n(local.set $m (if (result i32) (i32.gt_s (local.get $a) (local.get $b)) (then (local.get $a)) (else (local.get $b))))\n(if (result i32) (i32.gt_s (local.get $c) (local.get $m)) (then (local.get $c)) (else (local.get $m)))",
+  "P03": "(if (result i32) (i32.lt_s (local.get $a) (local.get $b)) (then (local.get $b)) (else (if (result i32) (i32.gt_s (local.get $a) (local.get $c)) (then (local.get $c)) (else (local.get $a)))))",
+  "P04": "(if (result i32) (i32.lt_s (local.get $a) (i32.const 0)) (then (i32.sub (i32.const 0) (local.get $a))) (else (local.get $a)))",
+  "P05": "(i32.sub (i32.gt_s (local.get $a) (i32.const 0)) (i32.lt_s (local.get $a) (i32.const 0)))",
+  "P06": "(i32.div_s (i32.mul (local.get $a) (i32.add (local.get $a) (i32.const 1))) (i32.const 2))",
+  "P07": "(local $acc i32)\n(local.set $acc (i32.const 1))\n(block $done (loop $again (br_if $done (i32.eqz (local.get $a))) (local.set $acc (i32.mul (local.get $acc) (local.get $a))) (local.set $a (i32.sub (local.get $a) (i32.const 1))) (br $again)))\n(local.get $acc)",
+  "P08": "(local $r i32)\n(block $done (loop $again (br_if $done (i32.eqz (local.get $b))) (local.set $r (i32.rem_u (local.get $a) (local.get $b))) (local.set $a (local.get $b)) (local.set $b (local.get $r)) (br $again)))\n(local.get $a)",
+  "P09": "(local $digits i32)\n(local.set $digits (i32.const 1))\n(block $done (loop $again (br_if $done (i32.lt_u (local.get $a) (i32.const 10))) (local.set $a (i32.div_u (local.get $a) (i32.const 10))) (local.set $digits (i32.add (local.get $digits) (i32.const 1))) (br $again)))\n(local.get $digits)",
+  "P10": "(local $d i32)\n(if (i32.lt_s (local.get $a) (i32.const 2)) (then (return (i32.const 0))))\n(local.set $d (i32.const 2))\n(block $done (loop $again (br_if $done (i32.gt_s (i32.mul (local.get $d) (local.get $d)) (local.get $a))) (if (i32.eqz (i32.rem_s (local.get $a) (local.get $d))) (then (return (i32.const 0)))) (local.set $d (i32.add (local.get $d) (i32.const 1))) (br $again)))\n(i32.const 1)"
+}

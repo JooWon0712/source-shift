@@ -1,0 +1,1187 @@
+{
+  "schema_version": 1,
+  "kind": "session-integration",
+  "created_at": "2026-10-27T11:55:26.061684+00:00",
+  "dataset_version": "ss-001-pilot-v1",
+  "model_identifier": null,
+  "model_selection": "inherited-current-session-model; no override",
+  "usage": null,
+  "cost": null,
+  "model_request_seconds": null,
+  "max_repair_calls": 2,
+  "provider_output_token_limit": null,
+  "response_artifact_byte_limit": 16384,
+  "tools": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "wasmtime": "50.0.1",
+    "clang": "clang version 23.1.4 (https://github.com/llvm/llvm-project 7a941dfb2877a0b8cf30323fefa85ad019e0b0f5)",
+    "wasm_ld": "LLD 23.1.4 (https://github.com/llvm/llvm-project 7a941dfb2877a0b8cf30323fefa85ad019e0b0f5)"
+  },
+  "clang_flags": [
+    "--target=wasm32-unknown-unknown",
+    "-std=c17",
+    "-O2",
+    "-ffreestanding",
+    "-fno-builtin",
+    "-nostdlib",
+    "-Wl,--no-entry",
+    "-Wl,--export=solve",
+    "-Wl,--fatal-warnings",
+    "-Wl,--stack-first",
+    "-Wl,-z,stack-size=65536",
+    "-Wl,--initial-memory=131072",
+    "-Wl,--max-memory=2097152"
+  ],
+  "finalized_at": "2026-10-27T12:02:51.394635+00:00",
+  "config": {
+    "wall_timeout_seconds": 10.0,
+    "fuel_per_case": 1000000,
+    "engine": {
+      "consume_fuel": true,
+      "parallel_compilation": false,
+      "cranelift_opt_level": "speed"
+    },
+    "store_limits": {
+      "memory_size": 2097152,
+      "table_elements": 1000,
+      "instances": 1,
+      "tables": 1,
+      "memories": 1
+    }
+  },
+  "orchestrator_sha256": "d3d0a50ea3cf9cc2855385af2805c0b4fe6828efffe7f456991b5e4dbbb0bd24",
+  "rows": [
+    {
+      "task_id": "P01",
+      "route": "c",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "body_file": "sources/p01-c/attempt-0.c",
+          "prompt_file": "sources/p01-c/attempt-0.prompt.txt",
+          "dispatch_file": "sources/p01-c/attempt-0.dispatch.txt",
+          "generator_context": "/root/trial_p01_c",
+          "response_sha256": "ff39e15ba10ca5a85cf19d7255bc851be90db25ff544ddd95eae75a0734a6ebf",
+          "public_status": "passed",
+          "final_status": "passed",
+          "conversion_status": "passed",
+          "public": {
+            "status": "passed",
+            "passed": 3,
+            "total": 3,
+            "wall_seconds": 0.5868646001908928,
+            "validation_seconds": 0.0017037999350577593,
+            "test_seconds": 0.0020973999053239822,
+            "failure_types": {}
+          },
+          "private": {
+            "status": "passed",
+            "passed": 71,
+            "total": 71,
+            "wall_seconds": 0.6552333000581712,
+            "validation_seconds": 0.0016580000519752502,
+            "test_seconds": 0.07152929995208979,
+            "failure_types": {}
+          },
+          "sizes": {
+            "body_bytes": 18,
+            "source_bytes": 90,
+            "wasm_bytes": 364
+          },
+          "public_check_wall_seconds": 2.2292943000793457,
+          "posthoc_wall_seconds": 2.505276900017634,
+          "dataset_sha256": "10c6ae671d755163412c53b70d270cfe471339fec2d35a7ab187db63f3cb270d",
+          "implementation_sha256": {
+            "__init__.py": "b6c5d2ae1f64eddd5e017499499be2355c6065316c572b7dd619b744d36dad57",
+            "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+            "_worker.py": "32c0cdfd2009fc720fa4141159c91c45132ebf0ad6e15b3956d19387d1c0e612",
+            "body_contract.py": "16a91d71edbb8c65c8f61bfef5f844e29b14f9950254ccb977254b087b9a7e7d",
+            "cli.py": "499f431d47d808979d7bb5a1b3b0f04f5fb6fbe2965efd814edd439483b967e4",
+            "processes.py": "52f5e3e62f01b34ae0ad171642dc5d541d2b797fe29b8c166b78fade21953412",
+            "runner.py": "045d44834fb101549f5e07084db4f615f18455160d3bac6d13fb13c0b3d8dd07",
+            "runtime_config.py": "1b12736ca07a7408b803810659f7d2a7bda7fc0fd0ba47097f644d9b9a296d20",
+            "tasks.py": "a13723e0097e1902765a8bf8abcc10cccb67d7eeec7e56606a865d608fa0b875",
+            "templates.py": "4f1d30490375fe6c90a95772d579a1021167b4a2a48fdcd2b902898eb7d61338"
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "P01",
+      "route": "wat",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "body_file": "sources/p01-wat/attempt-0.wat",
+          "prompt_file": "sources/p01-wat/attempt-0.prompt.txt",
+          "dispatch_file": "sources/p01-wat/attempt-0.dispatch.txt",
+          "generator_context": "/root/trial_p01_wat",
+          "response_sha256": "06b14ad475e131b5dd56e2821e526f1a74e5b60f12b10b931ce8611dd2face19",
+          "public_status": "passed",
+          "final_status": "passed",
+          "conversion_status": "passed",
+          "public": {
+            "status": "passed",
+            "passed": 3,
+            "total": 3,
+            "wall_seconds": 0.5913551000412554,
+            "validation_seconds": 0.002057099947705865,
+            "test_seconds": 0.0021558001171797514,
+            "failure_types": {}
+          },
+          "private": {
+            "status": "passed",
+            "passed": 71,
+            "total": 71,
+            "wall_seconds": 0.6663502999581397,
+            "validation_seconds": 0.0014766000676900148,
+            "test_seconds": 0.07138659991323948,
+            "failure_types": {}
+          },
+          "sizes": {
+            "body_bytes": 55,
+            "source_bytes": 153,
+            "wasm_bytes": 68
+          },
+          "public_check_wall_seconds": 1.4099925998598337,
+          "posthoc_wall_seconds": 2.0898962998762727,
+          "dataset_sha256": "10c6ae671d755163412c53b70d270cfe471339fec2d35a7ab187db63f3cb270d",
+          "implementation_sha256": {
+            "__init__.py": "b6c5d2ae1f64eddd5e017499499be2355c6065316c572b7dd619b744d36dad57",
+            "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+            "_worker.py": "32c0cdfd2009fc720fa4141159c91c45132ebf0ad6e15b3956d19387d1c0e612",
+            "body_contract.py": "16a91d71edbb8c65c8f61bfef5f844e29b14f9950254ccb977254b087b9a7e7d",
+            "cli.py": "499f431d47d808979d7bb5a1b3b0f04f5fb6fbe2965efd814edd439483b967e4",
+            "processes.py": "52f5e3e62f01b34ae0ad171642dc5d541d2b797fe29b8c166b78fade21953412",
+            "runner.py": "045d44834fb101549f5e07084db4f615f18455160d3bac6d13fb13c0b3d8dd07",
+            "runtime_config.py": "1b12736ca07a7408b803810659f7d2a7bda7fc0fd0ba47097f644d9b9a296d20",
+            "tasks.py": "a13723e0097e1902765a8bf8abcc10cccb67d7eeec7e56606a865d608fa0b875",
+            "templates.py": "4f1d30490375fe6c90a95772d579a1021167b4a2a48fdcd2b902898eb7d61338"
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "P02",
+      "route": "wat",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "body_file": "sources/p02-wat/attempt-0.wat",
+          "prompt_file": "sources/p02-wat/attempt-0.prompt.txt",
+          "dispatch_file": "sources/p02-wat/attempt-0.dispatch.txt",
+          "generator_context": "/root/trial_p02_wat",
+          "response_sha256": "5e227a3f066b4e5916a36e96bc2de3e18234a77b0a509aa3b92239708593c3e3",
+          "public_status": "passed",
+          "final_status": "passed",
+          "conversion_status": "passed",
+          "public": {
+            "status": "passed",
+            "passed": 3,
+            "total": 3,
+            "wall_seconds": 0.591034899931401,
+            "validation_seconds": 0.00236579985357821,
+            "test_seconds": 0.0019457999151200056,
+            "failure_types": {}
+          },
+          "private": {
+            "status": "passed",
+            "passed": 74,
+            "total": 74,
+            "wall_seconds": 0.6525242000352591,
+            "validation_seconds": 0.0015016000252217054,
+            "test_seconds": 0.07355899992398918,
+            "failure_types": {}
+          },
+          "sizes": {
+            "body_bytes": 172,
+            "source_bytes": 270,
+            "wasm_bytes": 89
+          },
+          "public_check_wall_seconds": 1.4140316001139581,
+          "posthoc_wall_seconds": 2.076795600121841,
+          "dataset_sha256": "046e3bd64077ae0d24ac0056a7521e8f5d02e9819177c27400b764924906b909",
+          "implementation_sha256": {
+            "__init__.py": "b6c5d2ae1f64eddd5e017499499be2355c6065316c572b7dd619b744d36dad57",
+            "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+            "_worker.py": "32c0cdfd2009fc720fa4141159c91c45132ebf0ad6e15b3956d19387d1c0e612",
+            "body_contract.py": "16a91d71edbb8c65c8f61bfef5f844e29b14f9950254ccb977254b087b9a7e7d",
+            "cli.py": "499f431d47d808979d7bb5a1b3b0f04f5fb6fbe2965efd814edd439483b967e4",
+            "processes.py": "52f5e3e62f01b34ae0ad171642dc5d541d2b797fe29b8c166b78fade21953412",
+            "runner.py": "045d44834fb101549f5e07084db4f615f18455160d3bac6d13fb13c0b3d8dd07",
+            "runtime_config.py": "1b12736ca07a7408b803810659f7d2a7bda7fc0fd0ba47097f644d9b9a296d20",
+            "tasks.py": "a13723e0097e1902765a8bf8abcc10cccb67d7eeec7e56606a865d608fa0b875",
+            "templates.py": "4f1d30490375fe6c90a95772d579a1021167b4a2a48fdcd2b902898eb7d61338"
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "P02",
+      "route": "c",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "body_file": "sources/p02-c/attempt-0.c",
+          "prompt_file": "sources/p02-c/attempt-0.prompt.txt",
+          "dispatch_file": "sources/p02-c/attempt-0.dispatch.txt",
+          "generator_context": "/root/trial_p02_c",
+          "response_sha256": "a595ecbdfcdf92549687d1bf45ef8fc4c7a0a17ec3200258e0e410393eed361c",
+          "public_status": "passed",
+          "final_status": "passed",
+          "conversion_status": "passed",
+          "public": {
+            "status": "passed",
+            "passed": 3,
+            "total": 3,
+            "wall_seconds": 0.5803742001298815,
+            "validation_seconds": 0.0019723998848348856,
+            "test_seconds": 0.0022311999928206205,
+            "failure_types": {}
+          },
+          "private": {
+            "status": "passed",
+            "passed": 74,
+            "total": 74,
+            "wall_seconds": 0.6718933000229299,
+            "validation_seconds": 0.001567699946463108,
+            "test_seconds": 0.07679950003512204,
+            "failure_types": {}
+          },
+          "sizes": {
+            "body_bytes": 113,
+            "source_bytes": 185,
+            "wasm_bytes": 376
+          },
+          "public_check_wall_seconds": 1.4900965001434088,
+          "posthoc_wall_seconds": 1.8523919000290334,
+          "dataset_sha256": "046e3bd64077ae0d24ac0056a7521e8f5d02e9819177c27400b764924906b909",
+          "implementation_sha256": {
+            "__init__.py": "b6c5d2ae1f64eddd5e017499499be2355c6065316c572b7dd619b744d36dad57",
+            "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+            "_worker.py": "32c0cdfd2009fc720fa4141159c91c45132ebf0ad6e15b3956d19387d1c0e612",
+            "body_contract.py": "16a91d71edbb8c65c8f61bfef5f844e29b14f9950254ccb977254b087b9a7e7d",
+            "cli.py": "499f431d47d808979d7bb5a1b3b0f04f5fb6fbe2965efd814edd439483b967e4",
+            "processes.py": "52f5e3e62f01b34ae0ad171642dc5d541d2b797fe29b8c166b78fade21953412",
+            "runner.py": "045d44834fb101549f5e07084db4f615f18455160d3bac6d13fb13c0b3d8dd07",
+            "runtime_config.py": "1b12736ca07a7408b803810659f7d2a7bda7fc0fd0ba47097f644d9b9a296d20",
+            "tasks.py": "a13723e0097e1902765a8bf8abcc10cccb67d7eeec7e56606a865d608fa0b875",
+            "templates.py": "4f1d30490375fe6c90a95772d579a1021167b4a2a48fdcd2b902898eb7d61338"
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "P03",
+      "route": "c",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "body_file": "sources/p03-c/attempt-0.c",
+          "prompt_file": "sources/p03-c/attempt-0.prompt.txt",
+          "dispatch_file": "sources/p03-c/attempt-0.dispatch.txt",
+          "generator_context": "/root/trial_p03_c",
+          "response_sha256": "68d539a7ec351b05df93f5fbed81295b8331dc31e9d4c38f727f1b0ef564700b",
+          "public_status": "passed",
+          "final_status": "passed",
+          "conversion_status": "passed",
+          "public": {
+            "status": "passed",
+            "passed": 3,
+            "total": 3,
+            "wall_seconds": 0.5861735998187214,
+            "validation_seconds": 0.0019327998161315918,
+            "test_seconds": 0.002080300124362111,
+            "failure_types": {}
+          },
+          "private": {
+            "status": "passed",
+            "passed": 76,
+            "total": 76,
+            "wall_seconds": 0.6759874001145363,
+            "validation_seconds": 0.001524199964478612,
+            "test_seconds": 0.07946079992689192,
+            "failure_types": {}
+          },
+          "sizes": {
+            "body_bytes": 68,
+            "source_bytes": 140,
+            "wasm_bytes": 374
+          },
+          "public_check_wall_seconds": 1.7488136000465602,
+          "posthoc_wall_seconds": 1.8663253001868725,
+          "dataset_sha256": "7102e9fc8d280c2873f85d28ee78ee98075954ef6bd4064dbe43589c211d7d86",
+          "implementation_sha256": {
+            "__init__.py": "b6c5d2ae1f64eddd5e017499499be2355c6065316c572b7dd619b744d36dad57",
+            "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+            "_worker.py": "32c0cdfd2009fc720fa4141159c91c45132ebf0ad6e15b3956d19387d1c0e612",
+            "body_contract.py": "16a91d71edbb8c65c8f61bfef5f844e29b14f9950254ccb977254b087b9a7e7d",
+            "cli.py": "499f431d47d808979d7bb5a1b3b0f04f5fb6fbe2965efd814edd439483b967e4",
+            "processes.py": "52f5e3e62f01b34ae0ad171642dc5d541d2b797fe29b8c166b78fade21953412",
+            "runner.py": "045d44834fb101549f5e07084db4f615f18455160d3bac6d13fb13c0b3d8dd07",
+            "runtime_config.py": "1b12736ca07a7408b803810659f7d2a7bda7fc0fd0ba47097f644d9b9a296d20",
+            "tasks.py": "a13723e0097e1902765a8bf8abcc10cccb67d7eeec7e56606a865d608fa0b875",
+            "templates.py": "4f1d30490375fe6c90a95772d579a1021167b4a2a48fdcd2b902898eb7d61338"
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "P03",
+      "route": "wat",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "body_file": "sources/p03-wat/attempt-0.wat",
+          "prompt_file": "sources/p03-wat/attempt-0.prompt.txt",
+          "dispatch_file": "sources/p03-wat/attempt-0.dispatch.txt",
+          "generator_context": "/root/trial_p03_wat",
+          "response_sha256": "a5f334ecb65661e9f34fcb7156ccba23183db193949c0c46dc1bc3ef38b31b23",
+          "public_status": "passed",
+          "final_status": "passed",
+          "conversion_status": "passed",
+          "public": {
+            "status": "passed",
+            "passed": 3,
+            "total": 3,
+            "wall_seconds": 0.5839329999871552,
+            "validation_seconds": 0.0020683000329881907,
+            "test_seconds": 0.0022430000826716423,
+            "failure_types": {}
+          },
+          "private": {
+            "status": "passed",
+            "passed": 76,
+            "total": 76,
+            "wall_seconds": 0.6563385999761522,
+            "validation_seconds": 0.0016089999116957188,
+            "test_seconds": 0.07559300004504621,
+            "failure_types": {}
+          },
+          "sizes": {
+            "body_bytes": 181,
+            "source_bytes": 279,
+            "wasm_bytes": 84
+          },
+          "public_check_wall_seconds": 2.326561300083995,
+          "posthoc_wall_seconds": 2.078623400069773,
+          "dataset_sha256": "7102e9fc8d280c2873f85d28ee78ee98075954ef6bd4064dbe43589c211d7d86",
+          "implementation_sha256": {
+            "__init__.py": "b6c5d2ae1f64eddd5e017499499be2355c6065316c572b7dd619b744d36dad57",
+            "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+            "_worker.py": "32c0cdfd2009fc720fa4141159c91c45132ebf0ad6e15b3956d19387d1c0e612",
+            "body_contract.py": "16a91d71edbb8c65c8f61bfef5f844e29b14f9950254ccb977254b087b9a7e7d",
+            "cli.py": "499f431d47d808979d7bb5a1b3b0f04f5fb6fbe2965efd814edd439483b967e4",
+            "processes.py": "52f5e3e62f01b34ae0ad171642dc5d541d2b797fe29b8c166b78fade21953412",
+            "runner.py": "045d44834fb101549f5e07084db4f615f18455160d3bac6d13fb13c0b3d8dd07",
+            "runtime_config.py": "1b12736ca07a7408b803810659f7d2a7bda7fc0fd0ba47097f644d9b9a296d20",
+            "tasks.py": "a13723e0097e1902765a8bf8abcc10cccb67d7eeec7e56606a865d608fa0b875",
+            "templates.py": "4f1d30490375fe6c90a95772d579a1021167b4a2a48fdcd2b902898eb7d61338"
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "P04",
+      "route": "wat",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "body_file": "sources/p04-wat/attempt-0.wat",
+          "prompt_file": "sources/p04-wat/attempt-0.prompt.txt",
+          "dispatch_file": "sources/p04-wat/attempt-0.dispatch.txt",
+          "generator_context": "/root/trial_p04_wat",
+          "response_sha256": "ab1761ed400afc7518bc21b86f8c07027fbc68006c542af0e8431e07d0f82daa",
+          "public_status": "passed",
+          "final_status": "passed",
+          "conversion_status": "passed",
+          "public": {
+            "status": "passed",
+            "passed": 3,
+            "total": 3,
+            "wall_seconds": 0.5904030001256615,
+            "validation_seconds": 0.0021162000484764576,
+            "test_seconds": 0.0021639999467879534,
+            "failure_types": {}
+          },
+          "private": {
+            "status": "passed",
+            "passed": 70,
+            "total": 70,
+            "wall_seconds": 0.6683783000335097,
+            "validation_seconds": 0.0016832000110298395,
+            "test_seconds": 0.07266009994782507,
+            "failure_types": {}
+          },
+          "sizes": {
+            "body_bytes": 113,
+            "source_bytes": 211,
+            "wasm_bytes": 76
+          },
+          "public_check_wall_seconds": 1.3896441999822855,
+          "posthoc_wall_seconds": 2.0756649000104517,
+          "dataset_sha256": "b45c92a90635b7a0c8b6b970adb69444c94755053cb2f213957d4083da0baa07",
+          "implementation_sha256": {
+            "__init__.py": "b6c5d2ae1f64eddd5e017499499be2355c6065316c572b7dd619b744d36dad57",
+            "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+            "_worker.py": "32c0cdfd2009fc720fa4141159c91c45132ebf0ad6e15b3956d19387d1c0e612",
+            "body_contract.py": "16a91d71edbb8c65c8f61bfef5f844e29b14f9950254ccb977254b087b9a7e7d",
+            "cli.py": "499f431d47d808979d7bb5a1b3b0f04f5fb6fbe2965efd814edd439483b967e4",
+            "processes.py": "52f5e3e62f01b34ae0ad171642dc5d541d2b797fe29b8c166b78fade21953412",
+            "runner.py": "045d44834fb101549f5e07084db4f615f18455160d3bac6d13fb13c0b3d8dd07",
+            "runtime_config.py": "1b12736ca07a7408b803810659f7d2a7bda7fc0fd0ba47097f644d9b9a296d20",
+            "tasks.py": "a13723e0097e1902765a8bf8abcc10cccb67d7eeec7e56606a865d608fa0b875",
+            "templates.py": "4f1d30490375fe6c90a95772d579a1021167b4a2a48fdcd2b902898eb7d61338"
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "P04",
+      "route": "c",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "body_file": "sources/p04-c/attempt-0.c",
+          "prompt_file": "sources/p04-c/attempt-0.prompt.txt",
+          "dispatch_file": "sources/p04-c/attempt-0.dispatch.txt",
+          "generator_context": "/root/trial_p04_c",
+          "response_sha256": "b16e65c8843a2d94251c6fdc344dba206feeb594922ba080106a03911bb32578",
+          "public_status": "passed",
+          "final_status": "passed",
+          "conversion_status": "passed",
+          "public": {
+            "status": "passed",
+            "passed": 3,
+            "total": 3,
+            "wall_seconds": 0.5809921000618488,
+            "validation_seconds": 0.0015783000271767378,
+            "test_seconds": 0.002174499910324812,
+            "failure_types": {}
+          },
+          "private": {
+            "status": "passed",
+            "passed": 70,
+            "total": 70,
+            "wall_seconds": 0.6668590998742729,
+            "validation_seconds": 0.0015182001516222954,
+            "test_seconds": 0.0736994999460876,
+            "failure_types": {}
+          },
+          "sizes": {
+            "body_bytes": 60,
+            "source_bytes": 132,
+            "wasm_bytes": 371
+          },
+          "public_check_wall_seconds": 1.1923358000349253,
+          "posthoc_wall_seconds": 1.8673586999066174,
+          "dataset_sha256": "b45c92a90635b7a0c8b6b970adb69444c94755053cb2f213957d4083da0baa07",
+          "implementation_sha256": {
+            "__init__.py": "b6c5d2ae1f64eddd5e017499499be2355c6065316c572b7dd619b744d36dad57",
+            "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+            "_worker.py": "32c0cdfd2009fc720fa4141159c91c45132ebf0ad6e15b3956d19387d1c0e612",
+            "body_contract.py": "16a91d71edbb8c65c8f61bfef5f844e29b14f9950254ccb977254b087b9a7e7d",
+            "cli.py": "499f431d47d808979d7bb5a1b3b0f04f5fb6fbe2965efd814edd439483b967e4",
+            "processes.py": "52f5e3e62f01b34ae0ad171642dc5d541d2b797fe29b8c166b78fade21953412",
+            "runner.py": "045d44834fb101549f5e07084db4f615f18455160d3bac6d13fb13c0b3d8dd07",
+            "runtime_config.py": "1b12736ca07a7408b803810659f7d2a7bda7fc0fd0ba47097f644d9b9a296d20",
+            "tasks.py": "a13723e0097e1902765a8bf8abcc10cccb67d7eeec7e56606a865d608fa0b875",
+            "templates.py": "4f1d30490375fe6c90a95772d579a1021167b4a2a48fdcd2b902898eb7d61338"
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "P05",
+      "route": "c",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "body_file": "sources/p05-c/attempt-0.c",
+          "prompt_file": "sources/p05-c/attempt-0.prompt.txt",
+          "dispatch_file": "sources/p05-c/attempt-0.dispatch.txt",
+          "generator_context": "/root/trial_p05_c",
+          "response_sha256": "2ef3813330edac3795b8be68506f41cdafdb3f31215270468c678bed22687a4a",
+          "public_status": "passed",
+          "final_status": "passed",
+          "conversion_status": "passed",
+          "public": {
+            "status": "passed",
+            "passed": 3,
+            "total": 3,
+            "wall_seconds": 0.587099099997431,
+            "validation_seconds": 0.001615599961951375,
+            "test_seconds": 0.002108599990606308,
+            "failure_types": {}
+          },
+          "private": {
+            "status": "passed",
+            "passed": 70,
+            "total": 70,
+            "wall_seconds": 0.6519256997853518,
+            "validation_seconds": 0.0015629001427441835,
+            "test_seconds": 0.07000160007737577,
+            "failure_types": {}
+          },
+          "sizes": {
+            "body_bytes": 26,
+            "source_bytes": 98,
+            "wasm_bytes": 367
+          },
+          "public_check_wall_seconds": 1.1929640998132527,
+          "posthoc_wall_seconds": 1.8495550001971424,
+          "dataset_sha256": "85a520aab4fca8a9b777ff147a252bf189ec00d872781c89e77aefcb7e9f91b3",
+          "implementation_sha256": {
+            "__init__.py": "b6c5d2ae1f64eddd5e017499499be2355c6065316c572b7dd619b744d36dad57",
+            "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+            "_worker.py": "32c0cdfd2009fc720fa4141159c91c45132ebf0ad6e15b3956d19387d1c0e612",
+            "body_contract.py": "16a91d71edbb8c65c8f61bfef5f844e29b14f9950254ccb977254b087b9a7e7d",
+            "cli.py": "499f431d47d808979d7bb5a1b3b0f04f5fb6fbe2965efd814edd439483b967e4",
+            "processes.py": "52f5e3e62f01b34ae0ad171642dc5d541d2b797fe29b8c166b78fade21953412",
+            "runner.py": "045d44834fb101549f5e07084db4f615f18455160d3bac6d13fb13c0b3d8dd07",
+            "runtime_config.py": "1b12736ca07a7408b803810659f7d2a7bda7fc0fd0ba47097f644d9b9a296d20",
+            "tasks.py": "a13723e0097e1902765a8bf8abcc10cccb67d7eeec7e56606a865d608fa0b875",
+            "templates.py": "4f1d30490375fe6c90a95772d579a1021167b4a2a48fdcd2b902898eb7d61338"
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "P05",
+      "route": "wat",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "body_file": "sources/p05-wat/attempt-0.wat",
+          "prompt_file": "sources/p05-wat/attempt-0.prompt.txt",
+          "dispatch_file": "sources/p05-wat/attempt-0.dispatch.txt",
+          "generator_context": "/root/trial_p05_wat",
+          "response_sha256": "df95e54ebcd19130ada9d39cf609914d24d74eb8ddc21abd8ab57b74a4f94433",
+          "public_status": "passed",
+          "final_status": "passed",
+          "conversion_status": "passed",
+          "public": {
+            "status": "passed",
+            "passed": 3,
+            "total": 3,
+            "wall_seconds": 0.5742711999919266,
+            "validation_seconds": 0.0022110999561846256,
+            "test_seconds": 0.0020554999355226755,
+            "failure_types": {}
+          },
+          "private": {
+            "status": "passed",
+            "passed": 70,
+            "total": 70,
+            "wall_seconds": 0.6515927000436932,
+            "validation_seconds": 0.0015732001047581434,
+            "test_seconds": 0.07000489998608828,
+            "failure_types": {}
+          },
+          "sizes": {
+            "body_bytes": 76,
+            "source_bytes": 174,
+            "wasm_bytes": 71
+          },
+          "public_check_wall_seconds": 1.4238533999305218,
+          "posthoc_wall_seconds": 2.046341300010681,
+          "dataset_sha256": "85a520aab4fca8a9b777ff147a252bf189ec00d872781c89e77aefcb7e9f91b3",
+          "implementation_sha256": {
+            "__init__.py": "b6c5d2ae1f64eddd5e017499499be2355c6065316c572b7dd619b744d36dad57",
+            "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+            "_worker.py": "32c0cdfd2009fc720fa4141159c91c45132ebf0ad6e15b3956d19387d1c0e612",
+            "body_contract.py": "16a91d71edbb8c65c8f61bfef5f844e29b14f9950254ccb977254b087b9a7e7d",
+            "cli.py": "499f431d47d808979d7bb5a1b3b0f04f5fb6fbe2965efd814edd439483b967e4",
+            "processes.py": "52f5e3e62f01b34ae0ad171642dc5d541d2b797fe29b8c166b78fade21953412",
+            "runner.py": "045d44834fb101549f5e07084db4f615f18455160d3bac6d13fb13c0b3d8dd07",
+            "runtime_config.py": "1b12736ca07a7408b803810659f7d2a7bda7fc0fd0ba47097f644d9b9a296d20",
+            "tasks.py": "a13723e0097e1902765a8bf8abcc10cccb67d7eeec7e56606a865d608fa0b875",
+            "templates.py": "4f1d30490375fe6c90a95772d579a1021167b4a2a48fdcd2b902898eb7d61338"
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "P06",
+      "route": "wat",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "body_file": "sources/p06-wat/attempt-0.wat",
+          "prompt_file": "sources/p06-wat/attempt-0.prompt.txt",
+          "dispatch_file": "sources/p06-wat/attempt-0.dispatch.txt",
+          "generator_context": "/root/trial_p06_wat",
+          "response_sha256": "a89eb6130c3c9ab3a6e247f6c57543d4948863e3e222b12076e1b3f9bf3e698b",
+          "public_status": "passed",
+          "final_status": "passed",
+          "conversion_status": "passed",
+          "public": {
+            "status": "passed",
+            "passed": 3,
+            "total": 3,
+            "wall_seconds": 0.5929402001202106,
+            "validation_seconds": 0.002110899891704321,
+            "test_seconds": 0.002012199955061078,
+            "failure_types": {}
+          },
+          "private": {
+            "status": "passed",
+            "passed": 71,
+            "total": 71,
+            "wall_seconds": 0.6503481001127511,
+            "validation_seconds": 0.001573299989104271,
+            "test_seconds": 0.06922050006687641,
+            "failure_types": {}
+          },
+          "sizes": {
+            "body_bytes": 76,
+            "source_bytes": 174,
+            "wasm_bytes": 71
+          },
+          "public_check_wall_seconds": 2.08980800001882,
+          "posthoc_wall_seconds": 2.053978799842298,
+          "dataset_sha256": "3aa75892e6ae63e5a1e672cdb1fcb989ae5b45f01716ed52983161ea61e7490f",
+          "implementation_sha256": {
+            "__init__.py": "b6c5d2ae1f64eddd5e017499499be2355c6065316c572b7dd619b744d36dad57",
+            "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+            "_worker.py": "32c0cdfd2009fc720fa4141159c91c45132ebf0ad6e15b3956d19387d1c0e612",
+            "body_contract.py": "16a91d71edbb8c65c8f61bfef5f844e29b14f9950254ccb977254b087b9a7e7d",
+            "cli.py": "499f431d47d808979d7bb5a1b3b0f04f5fb6fbe2965efd814edd439483b967e4",
+            "processes.py": "52f5e3e62f01b34ae0ad171642dc5d541d2b797fe29b8c166b78fade21953412",
+            "runner.py": "045d44834fb101549f5e07084db4f615f18455160d3bac6d13fb13c0b3d8dd07",
+            "runtime_config.py": "1b12736ca07a7408b803810659f7d2a7bda7fc0fd0ba47097f644d9b9a296d20",
+            "tasks.py": "a13723e0097e1902765a8bf8abcc10cccb67d7eeec7e56606a865d608fa0b875",
+            "templates.py": "4f1d30490375fe6c90a95772d579a1021167b4a2a48fdcd2b902898eb7d61338"
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "P06",
+      "route": "c",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "body_file": "sources/p06-c/attempt-0.c",
+          "prompt_file": "sources/p06-c/attempt-0.prompt.txt",
+          "dispatch_file": "sources/p06-c/attempt-0.dispatch.txt",
+          "generator_context": "/root/trial_p06_c",
+          "response_sha256": "855771d717ae05500643a1d13cae073378bcfc2a8191ec254d15cc42f3b906f3",
+          "public_status": "passed",
+          "final_status": "passed",
+          "conversion_status": "passed",
+          "public": {
+            "status": "passed",
+            "passed": 3,
+            "total": 3,
+            "wall_seconds": 0.5940945001784712,
+            "validation_seconds": 0.0015541999600827694,
+            "test_seconds": 0.0021551998797804117,
+            "failure_types": {}
+          },
+          "private": {
+            "status": "passed",
+            "passed": 71,
+            "total": 71,
+            "wall_seconds": 0.6543482998386025,
+            "validation_seconds": 0.0015635001473128796,
+            "test_seconds": 0.07252689986489713,
+            "failure_types": {}
+          },
+          "sizes": {
+            "body_bytes": 24,
+            "source_bytes": 96,
+            "wasm_bytes": 367
+          },
+          "public_check_wall_seconds": 1.316946600098163,
+          "posthoc_wall_seconds": 1.8546706999186426,
+          "dataset_sha256": "3aa75892e6ae63e5a1e672cdb1fcb989ae5b45f01716ed52983161ea61e7490f",
+          "implementation_sha256": {
+            "__init__.py": "b6c5d2ae1f64eddd5e017499499be2355c6065316c572b7dd619b744d36dad57",
+            "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+            "_worker.py": "32c0cdfd2009fc720fa4141159c91c45132ebf0ad6e15b3956d19387d1c0e612",
+            "body_contract.py": "16a91d71edbb8c65c8f61bfef5f844e29b14f9950254ccb977254b087b9a7e7d",
+            "cli.py": "499f431d47d808979d7bb5a1b3b0f04f5fb6fbe2965efd814edd439483b967e4",
+            "processes.py": "52f5e3e62f01b34ae0ad171642dc5d541d2b797fe29b8c166b78fade21953412",
+            "runner.py": "045d44834fb101549f5e07084db4f615f18455160d3bac6d13fb13c0b3d8dd07",
+            "runtime_config.py": "1b12736ca07a7408b803810659f7d2a7bda7fc0fd0ba47097f644d9b9a296d20",
+            "tasks.py": "a13723e0097e1902765a8bf8abcc10cccb67d7eeec7e56606a865d608fa0b875",
+            "templates.py": "4f1d30490375fe6c90a95772d579a1021167b4a2a48fdcd2b902898eb7d61338"
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "P07",
+      "route": "c",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "body_file": "sources/p07-c/attempt-0.c",
+          "prompt_file": "sources/p07-c/attempt-0.prompt.txt",
+          "dispatch_file": "sources/p07-c/attempt-0.dispatch.txt",
+          "generator_context": "/root/trial_p07_c",
+          "response_sha256": "9c78bce08828ead940de4199411b0a50c744074bf3d6ce51f648c608c8d964ad",
+          "public_status": "passed",
+          "final_status": "passed",
+          "conversion_status": "passed",
+          "public": {
+            "status": "passed",
+            "passed": 3,
+            "total": 3,
+            "wall_seconds": 0.5975498999468982,
+            "validation_seconds": 0.0018451998475939035,
+            "test_seconds": 0.0021238999906927347,
+            "failure_types": {}
+          },
+          "private": {
+            "status": "passed",
+            "passed": 10,
+            "total": 10,
+            "wall_seconds": 0.6022711999248713,
+            "validation_seconds": 0.0021985999774187803,
+            "test_seconds": 0.008610700024291873,
+            "failure_types": {}
+          },
+          "sizes": {
+            "body_bytes": 89,
+            "source_bytes": 161,
+            "wasm_bytes": 532
+          },
+          "public_check_wall_seconds": 1.3344052999746054,
+          "posthoc_wall_seconds": 1.8148876000195742,
+          "dataset_sha256": "3a4a862732b3bc9781e66dedd43024044d451ce74f9632323edf03afe289f698",
+          "implementation_sha256": {
+            "__init__.py": "b6c5d2ae1f64eddd5e017499499be2355c6065316c572b7dd619b744d36dad57",
+            "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+            "_worker.py": "32c0cdfd2009fc720fa4141159c91c45132ebf0ad6e15b3956d19387d1c0e612",
+            "body_contract.py": "16a91d71edbb8c65c8f61bfef5f844e29b14f9950254ccb977254b087b9a7e7d",
+            "cli.py": "499f431d47d808979d7bb5a1b3b0f04f5fb6fbe2965efd814edd439483b967e4",
+            "processes.py": "52f5e3e62f01b34ae0ad171642dc5d541d2b797fe29b8c166b78fade21953412",
+            "runner.py": "045d44834fb101549f5e07084db4f615f18455160d3bac6d13fb13c0b3d8dd07",
+            "runtime_config.py": "1b12736ca07a7408b803810659f7d2a7bda7fc0fd0ba47097f644d9b9a296d20",
+            "tasks.py": "a13723e0097e1902765a8bf8abcc10cccb67d7eeec7e56606a865d608fa0b875",
+            "templates.py": "4f1d30490375fe6c90a95772d579a1021167b4a2a48fdcd2b902898eb7d61338"
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "P07",
+      "route": "wat",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "body_file": "sources/p07-wat/attempt-0.wat",
+          "prompt_file": "sources/p07-wat/attempt-0.prompt.txt",
+          "dispatch_file": "sources/p07-wat/attempt-0.dispatch.txt",
+          "generator_context": "/root/trial_p07_wat",
+          "response_sha256": "706693111d5b8da34ddf1f4995c24d79676f76a592f8762859056b0a9d8dc617",
+          "public_status": "passed",
+          "final_status": "passed",
+          "conversion_status": "passed",
+          "public": {
+            "status": "passed",
+            "passed": 3,
+            "total": 3,
+            "wall_seconds": 0.5754811000078917,
+            "validation_seconds": 0.0021693999879062176,
+            "test_seconds": 0.001932299928739667,
+            "failure_types": {}
+          },
+          "private": {
+            "status": "passed",
+            "passed": 10,
+            "total": 10,
+            "wall_seconds": 0.6016305000521243,
+            "validation_seconds": 0.0015913001261651516,
+            "test_seconds": 0.008022699970752,
+            "failure_types": {}
+          },
+          "sizes": {
+            "body_bytes": 329,
+            "source_bytes": 427,
+            "wasm_bytes": 124
+          },
+          "public_check_wall_seconds": 1.4005741002038121,
+          "posthoc_wall_seconds": 2.0178461000323296,
+          "dataset_sha256": "3a4a862732b3bc9781e66dedd43024044d451ce74f9632323edf03afe289f698",
+          "implementation_sha256": {
+            "__init__.py": "b6c5d2ae1f64eddd5e017499499be2355c6065316c572b7dd619b744d36dad57",
+            "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+            "_worker.py": "32c0cdfd2009fc720fa4141159c91c45132ebf0ad6e15b3956d19387d1c0e612",
+            "body_contract.py": "16a91d71edbb8c65c8f61bfef5f844e29b14f9950254ccb977254b087b9a7e7d",
+            "cli.py": "499f431d47d808979d7bb5a1b3b0f04f5fb6fbe2965efd814edd439483b967e4",
+            "processes.py": "52f5e3e62f01b34ae0ad171642dc5d541d2b797fe29b8c166b78fade21953412",
+            "runner.py": "045d44834fb101549f5e07084db4f615f18455160d3bac6d13fb13c0b3d8dd07",
+            "runtime_config.py": "1b12736ca07a7408b803810659f7d2a7bda7fc0fd0ba47097f644d9b9a296d20",
+            "tasks.py": "a13723e0097e1902765a8bf8abcc10cccb67d7eeec7e56606a865d608fa0b875",
+            "templates.py": "4f1d30490375fe6c90a95772d579a1021167b4a2a48fdcd2b902898eb7d61338"
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "P08",
+      "route": "wat",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "body_file": "sources/p08-wat/attempt-0.wat",
+          "prompt_file": "sources/p08-wat/attempt-0.prompt.txt",
+          "dispatch_file": "sources/p08-wat/attempt-0.dispatch.txt",
+          "generator_context": "/root/trial_p08_wat",
+          "response_sha256": "2b883143d26a95ff0894971b9472f770a5cbb0d09b1f4a59525c69e27207a6a6",
+          "public_status": "passed",
+          "final_status": "passed",
+          "conversion_status": "passed",
+          "public": {
+            "status": "passed",
+            "passed": 3,
+            "total": 3,
+            "wall_seconds": 0.5921062000561506,
+            "validation_seconds": 0.0020766998641192913,
+            "test_seconds": 0.0021068998612463474,
+            "failure_types": {}
+          },
+          "private": {
+            "status": "passed",
+            "passed": 77,
+            "total": 77,
+            "wall_seconds": 0.6568646000232548,
+            "validation_seconds": 0.0017323000356554985,
+            "test_seconds": 0.07625299994833767,
+            "failure_types": {}
+          },
+          "sizes": {
+            "body_bytes": 276,
+            "source_bytes": 374,
+            "wasm_bytes": 119
+          },
+          "public_check_wall_seconds": 1.4119965001009405,
+          "posthoc_wall_seconds": 2.0727326998021454,
+          "dataset_sha256": "12e5f7e7b0f3e0782186aa5e2fd1cf8dbb5f48b68ed2dfd8b29533f456ea960a",
+          "implementation_sha256": {
+            "__init__.py": "b6c5d2ae1f64eddd5e017499499be2355c6065316c572b7dd619b744d36dad57",
+            "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+            "_worker.py": "32c0cdfd2009fc720fa4141159c91c45132ebf0ad6e15b3956d19387d1c0e612",
+            "body_contract.py": "16a91d71edbb8c65c8f61bfef5f844e29b14f9950254ccb977254b087b9a7e7d",
+            "cli.py": "499f431d47d808979d7bb5a1b3b0f04f5fb6fbe2965efd814edd439483b967e4",
+            "processes.py": "52f5e3e62f01b34ae0ad171642dc5d541d2b797fe29b8c166b78fade21953412",
+            "runner.py": "045d44834fb101549f5e07084db4f615f18455160d3bac6d13fb13c0b3d8dd07",
+            "runtime_config.py": "1b12736ca07a7408b803810659f7d2a7bda7fc0fd0ba47097f644d9b9a296d20",
+            "tasks.py": "a13723e0097e1902765a8bf8abcc10cccb67d7eeec7e56606a865d608fa0b875",
+            "templates.py": "4f1d30490375fe6c90a95772d579a1021167b4a2a48fdcd2b902898eb7d61338"
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "P08",
+      "route": "c",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "body_file": "sources/p08-c/attempt-0.c",
+          "prompt_file": "sources/p08-c/attempt-0.prompt.txt",
+          "dispatch_file": "sources/p08-c/attempt-0.dispatch.txt",
+          "generator_context": "/root/trial_p08_c",
+          "response_sha256": "e2e7181120d1f96d69b80bff182a9ff0eab72b62f9bb051fe32a97bbd56c89a5",
+          "public_status": "passed",
+          "final_status": "passed",
+          "conversion_status": "passed",
+          "public": {
+            "status": "passed",
+            "passed": 3,
+            "total": 3,
+            "wall_seconds": 0.5858636000193655,
+            "validation_seconds": 0.0021683000959455967,
+            "test_seconds": 0.0022140000946819782,
+            "failure_types": {}
+          },
+          "private": {
+            "status": "passed",
+            "passed": 77,
+            "total": 77,
+            "wall_seconds": 0.6758814000058919,
+            "validation_seconds": 0.0020497001241892576,
+            "test_seconds": 0.08104760013520718,
+            "failure_types": {}
+          },
+          "sizes": {
+            "body_bytes": 90,
+            "source_bytes": 162,
+            "wasm_bytes": 390
+          },
+          "public_check_wall_seconds": 1.2034083001781255,
+          "posthoc_wall_seconds": 1.8664959999732673,
+          "dataset_sha256": "12e5f7e7b0f3e0782186aa5e2fd1cf8dbb5f48b68ed2dfd8b29533f456ea960a",
+          "implementation_sha256": {
+            "__init__.py": "b6c5d2ae1f64eddd5e017499499be2355c6065316c572b7dd619b744d36dad57",
+            "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+            "_worker.py": "32c0cdfd2009fc720fa4141159c91c45132ebf0ad6e15b3956d19387d1c0e612",
+            "body_contract.py": "16a91d71edbb8c65c8f61bfef5f844e29b14f9950254ccb977254b087b9a7e7d",
+            "cli.py": "499f431d47d808979d7bb5a1b3b0f04f5fb6fbe2965efd814edd439483b967e4",
+            "processes.py": "52f5e3e62f01b34ae0ad171642dc5d541d2b797fe29b8c166b78fade21953412",
+            "runner.py": "045d44834fb101549f5e07084db4f615f18455160d3bac6d13fb13c0b3d8dd07",
+            "runtime_config.py": "1b12736ca07a7408b803810659f7d2a7bda7fc0fd0ba47097f644d9b9a296d20",
+            "tasks.py": "a13723e0097e1902765a8bf8abcc10cccb67d7eeec7e56606a865d608fa0b875",
+            "templates.py": "4f1d30490375fe6c90a95772d579a1021167b4a2a48fdcd2b902898eb7d61338"
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "P09",
+      "route": "c",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "body_file": "sources/p09-c/attempt-0.c",
+          "prompt_file": "sources/p09-c/attempt-0.prompt.txt",
+          "dispatch_file": "sources/p09-c/attempt-0.dispatch.txt",
+          "generator_context": "/root/trial_p09_c",
+          "response_sha256": "9e0e837d2a46e2770f36b5d1ec7107699bb5a041c451a1d1bac06d26f560ed43",
+          "public_status": "passed",
+          "final_status": "passed",
+          "conversion_status": "passed",
+          "public": {
+            "status": "passed",
+            "passed": 3,
+            "total": 3,
+            "wall_seconds": 0.5839782000984997,
+            "validation_seconds": 0.0017744998913258314,
+            "test_seconds": 0.0026825000531971455,
+            "failure_types": {}
+          },
+          "private": {
+            "status": "passed",
+            "passed": 83,
+            "total": 83,
+            "wall_seconds": 0.6856299999635667,
+            "validation_seconds": 0.0016781999729573727,
+            "test_seconds": 0.08914440008811653,
+            "failure_types": {}
+          },
+          "sizes": {
+            "body_bytes": 85,
+            "source_bytes": 157,
+            "wasm_bytes": 407
+          },
+          "public_check_wall_seconds": 1.189425399992615,
+          "posthoc_wall_seconds": 1.8771852001082152,
+          "dataset_sha256": "8c5890b5a6f6698cd27487842bb357a97ff3f08073a926e7463c20b45336272c",
+          "implementation_sha256": {
+            "__init__.py": "b6c5d2ae1f64eddd5e017499499be2355c6065316c572b7dd619b744d36dad57",
+            "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+            "_worker.py": "32c0cdfd2009fc720fa4141159c91c45132ebf0ad6e15b3956d19387d1c0e612",
+            "body_contract.py": "16a91d71edbb8c65c8f61bfef5f844e29b14f9950254ccb977254b087b9a7e7d",
+            "cli.py": "499f431d47d808979d7bb5a1b3b0f04f5fb6fbe2965efd814edd439483b967e4",
+            "processes.py": "52f5e3e62f01b34ae0ad171642dc5d541d2b797fe29b8c166b78fade21953412",
+            "runner.py": "045d44834fb101549f5e07084db4f615f18455160d3bac6d13fb13c0b3d8dd07",
+            "runtime_config.py": "1b12736ca07a7408b803810659f7d2a7bda7fc0fd0ba47097f644d9b9a296d20",
+            "tasks.py": "a13723e0097e1902765a8bf8abcc10cccb67d7eeec7e56606a865d608fa0b875",
+            "templates.py": "4f1d30490375fe6c90a95772d579a1021167b4a2a48fdcd2b902898eb7d61338"
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "P09",
+      "route": "wat",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "body_file": "sources/p09-wat/attempt-0.wat",
+          "prompt_file": "sources/p09-wat/attempt-0.prompt.txt",
+          "dispatch_file": "sources/p09-wat/attempt-0.dispatch.txt",
+          "generator_context": "/root/trial_p09_wat",
+          "response_sha256": "8a1fa1bc51802e1625ec56f108812f7179b656a21561b27b2e8305549999ff4c",
+          "public_status": "passed",
+          "final_status": "passed",
+          "conversion_status": "passed",
+          "public": {
+            "status": "passed",
+            "passed": 3,
+            "total": 3,
+            "wall_seconds": 0.607478299876675,
+            "validation_seconds": 0.0022815000265836716,
+            "test_seconds": 0.0020528000313788652,
+            "failure_types": {}
+          },
+          "private": {
+            "status": "passed",
+            "passed": 83,
+            "total": 83,
+            "wall_seconds": 0.6625372001435608,
+            "validation_seconds": 0.0016367000062018633,
+            "test_seconds": 0.08133370010182261,
+            "failure_types": {}
+          },
+          "sizes": {
+            "body_bytes": 318,
+            "source_bytes": 416,
+            "wasm_bytes": 123
+          },
+          "public_check_wall_seconds": 1.4248437001369894,
+          "posthoc_wall_seconds": 2.1063140998594463,
+          "dataset_sha256": "8c5890b5a6f6698cd27487842bb357a97ff3f08073a926e7463c20b45336272c",
+          "implementation_sha256": {
+            "__init__.py": "b6c5d2ae1f64eddd5e017499499be2355c6065316c572b7dd619b744d36dad57",
+            "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+            "_worker.py": "32c0cdfd2009fc720fa4141159c91c45132ebf0ad6e15b3956d19387d1c0e612",
+            "body_contract.py": "16a91d71edbb8c65c8f61bfef5f844e29b14f9950254ccb977254b087b9a7e7d",
+            "cli.py": "499f431d47d808979d7bb5a1b3b0f04f5fb6fbe2965efd814edd439483b967e4",
+            "processes.py": "52f5e3e62f01b34ae0ad171642dc5d541d2b797fe29b8c166b78fade21953412",
+            "runner.py": "045d44834fb101549f5e07084db4f615f18455160d3bac6d13fb13c0b3d8dd07",
+            "runtime_config.py": "1b12736ca07a7408b803810659f7d2a7bda7fc0fd0ba47097f644d9b9a296d20",
+            "tasks.py": "a13723e0097e1902765a8bf8abcc10cccb67d7eeec7e56606a865d608fa0b875",
+            "templates.py": "4f1d30490375fe6c90a95772d579a1021167b4a2a48fdcd2b902898eb7d61338"
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "P10",
+      "route": "wat",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "body_file": "sources/p10-wat/attempt-0.wat",
+          "prompt_file": "sources/p10-wat/attempt-0.prompt.txt",
+          "dispatch_file": "sources/p10-wat/attempt-0.dispatch.txt",
+          "generator_context": "/root/trial_p10_wat",
+          "response_sha256": "55d05dcb1d351a1b827b359577efb3cf20fdecc007d7ae1ee1bfe497dcfb95e1",
+          "public_status": "passed",
+          "final_status": "passed",
+          "conversion_status": "passed",
+          "public": {
+            "status": "passed",
+            "passed": 3,
+            "total": 3,
+            "wall_seconds": 0.5879168000537902,
+            "validation_seconds": 0.0022291000932455063,
+            "test_seconds": 0.0020514000207185745,
+            "failure_types": {}
+          },
+          "private": {
+            "status": "passed",
+            "passed": 82,
+            "total": 82,
+            "wall_seconds": 0.6656518999952823,
+            "validation_seconds": 0.0017089000903069973,
+            "test_seconds": 0.07908480009064078,
+            "failure_types": {}
+          },
+          "sizes": {
+            "body_bytes": 426,
+            "source_bytes": 524,
+            "wasm_bytes": 137
+          },
+          "public_check_wall_seconds": 2.095188899897039,
+          "posthoc_wall_seconds": 2.0505680998321623,
+          "dataset_sha256": "c1d692698c39960df7859ada0809a84ac3572eb362551e4957c8afa5e50a39ce",
+          "implementation_sha256": {
+            "__init__.py": "b6c5d2ae1f64eddd5e017499499be2355c6065316c572b7dd619b744d36dad57",
+            "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+            "_worker.py": "32c0cdfd2009fc720fa4141159c91c45132ebf0ad6e15b3956d19387d1c0e612",
+            "body_contract.py": "16a91d71edbb8c65c8f61bfef5f844e29b14f9950254ccb977254b087b9a7e7d",
+            "cli.py": "499f431d47d808979d7bb5a1b3b0f04f5fb6fbe2965efd814edd439483b967e4",
+            "processes.py": "52f5e3e62f01b34ae0ad171642dc5d541d2b797fe29b8c166b78fade21953412",
+            "runner.py": "045d44834fb101549f5e07084db4f615f18455160d3bac6d13fb13c0b3d8dd07",
+            "runtime_config.py": "1b12736ca07a7408b803810659f7d2a7bda7fc0fd0ba47097f644d9b9a296d20",
+            "tasks.py": "a13723e0097e1902765a8bf8abcc10cccb67d7eeec7e56606a865d608fa0b875",
+            "templates.py": "4f1d30490375fe6c90a95772d579a1021167b4a2a48fdcd2b902898eb7d61338"
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "P10",
+      "route": "c",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "body_file": "sources/p10-c/attempt-0.c",
+          "prompt_file": "sources/p10-c/attempt-0.prompt.txt",
+          "dispatch_file": "sources/p10-c/attempt-0.dispatch.txt",
+          "generator_context": "/root/trial_p10_c",
+          "response_sha256": "4e311ab618e05640d02a868418b785819f8c903509f01d5eb3b44c7699a388fb",
+          "public_status": "passed",
+          "final_status": "passed",
+          "conversion_status": "passed",
+          "public": {
+            "status": "passed",
+            "passed": 3,
+            "total": 3,
+            "wall_seconds": 0.5802725001703948,
+            "validation_seconds": 0.0017338001634925604,
+            "test_seconds": 0.0023155000526458025,
+            "failure_types": {}
+          },
+          "private": {
+            "status": "passed",
+            "passed": 82,
+            "total": 82,
+            "wall_seconds": 0.6856080999132246,
+            "validation_seconds": 0.0017335000447928905,
+            "test_seconds": 0.0875015000347048,
+            "failure_types": {}
+          },
+          "sizes": {
+            "body_bytes": 156,
+            "source_bytes": 228,
+            "wasm_bytes": 433
+          },
+          "public_check_wall_seconds": 1.2020221001002938,
+          "posthoc_wall_seconds": 1.8881156002171338,
+          "dataset_sha256": "c1d692698c39960df7859ada0809a84ac3572eb362551e4957c8afa5e50a39ce",
+          "implementation_sha256": {
+            "__init__.py": "b6c5d2ae1f64eddd5e017499499be2355c6065316c572b7dd619b744d36dad57",
+            "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+            "_worker.py": "32c0cdfd2009fc720fa4141159c91c45132ebf0ad6e15b3956d19387d1c0e612",
+            "body_contract.py": "16a91d71edbb8c65c8f61bfef5f844e29b14f9950254ccb977254b087b9a7e7d",
+            "cli.py": "499f431d47d808979d7bb5a1b3b0f04f5fb6fbe2965efd814edd439483b967e4",
+            "processes.py": "52f5e3e62f01b34ae0ad171642dc5d541d2b797fe29b8c166b78fade21953412",
+            "runner.py": "045d44834fb101549f5e07084db4f615f18455160d3bac6d13fb13c0b3d8dd07",
+            "runtime_config.py": "1b12736ca07a7408b803810659f7d2a7bda7fc0fd0ba47097f644d9b9a296d20",
+            "tasks.py": "a13723e0097e1902765a8bf8abcc10cccb67d7eeec7e56606a865d608fa0b875",
+            "templates.py": "4f1d30490375fe6c90a95772d579a1021167b4a2a48fdcd2b902898eb7d61338"
+          }
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "세션 에이전트의 공개 응답 파일을 평가했다. API 원 응답/정확한 모델 ID/seed/출력 토큰 상한/usage/요청 지연은 관측하지 못했다.",
+    "생성기는 문맥을 새로 시작하며 공개 명세와 예제만 전달받았다. 각 과제·경로 1회이고 공개 실패 시 최대 2회 수정한다.",
+    "초기 공개 검사와 생성·수정 종료 후 사후 평가에서 각각 컴파일한다. 두 단계 시간은 별도로 기록한다.",
+    "시간은 Python 시작/JIT/기록을 포함한 개발 검증 시간이며 실행 성능 벤치마크나 모델 생성 속도 비교가 아니다.",
+    "파일 크기는 관측했지만 토큰 수나 비용으로 환산하지 않았다. 본 실행으로 경로의 일반적 우월성을 판단하지 않는다.",
+    "원본 prompt는 로컬에 보존하고, 공개 복사본의 workspace 절대 경로만 <workspace>로 치환했다.",
+    "최초 3개는 과제 프롬프트를 직접 전달했고 이후에는 지정한 과제 프롬프트 파일만 읽도록 했다. 추가 전달 지시문도 함께 보존했다.",
+    "dispatch.txt는 실제 발송 지시문과 대조해 재구성한 기록이며 공급자 원 응답이나 전체 system/developer 문맥은 아니다.",
+    "이번 20개 응답은 UTF-8/바이트 상한을 지켰다. 현재 보조 스크립트는 응답 인코딩·크기 위반 시 원본을 보존하고 중단하므로 해당 실패의 자동 집계는 후속 보완 사항이다."
+  ]
+}

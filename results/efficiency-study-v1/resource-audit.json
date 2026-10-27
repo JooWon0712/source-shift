@@ -1,0 +1,48 @@
+{
+  "snapshot_at": "2026-10-27T13:32:08.088760+00:00",
+  "actual_billed_cost": null,
+  "scopes": {
+    "generation": {
+      "input_tokens": 399059,
+      "cached_input_tokens": 387200,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 6858,
+      "reasoning_output_tokens": 2407,
+      "total_tokens": 405917
+    },
+    "shared_dispatcher": {
+      "input_tokens": 1836900,
+      "cached_input_tokens": 1806464,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 10921,
+      "reasoning_output_tokens": 346,
+      "total_tokens": 1847821
+    },
+    "measurement_implementation_helpers": {
+      "input_tokens": 2217608,
+      "cached_input_tokens": 2139264,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 26205,
+      "reasoning_output_tokens": 8595,
+      "total_tokens": 2243813
+    },
+    "primary_turn_snapshot": {
+      "input_tokens": 10629128,
+      "cached_input_tokens": 10592896,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 42230,
+      "reasoning_output_tokens": 21473,
+      "total_tokens": 10671358
+    }
+  },
+  "combined_observed_usage": {
+    "input_tokens": 15082695,
+    "cached_input_tokens": 14925824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 86214,
+    "reasoning_output_tokens": 32821,
+    "total_tokens": 15168909
+  },
+  "primary_snapshot_complete": false,
+  "note": "Current user turn only for primary; snapshot stops before subsequent tool results/final report. Counts include repeated/cached context. Shared implementation and analysis are not attributed to C or WAT. No separate API calls."
+}

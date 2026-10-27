@@ -1,0 +1,12 @@
+{
+  "P01": "(i32.add (i32.add (local.get $a) (local.get $b)) (local.get $c))",
+  "P02": "(local.set $a (select (local.get $a) (local.get $b) (i32.gt_s (local.get $a) (local.get $b))))\n(select (local.get $a) (local.get $c) (i32.gt_s (local.get $a) (local.get $c)))",
+  "P03": "(if (result i32) (i32.lt_s (local.get $a) (local.get $b)) (then (local.get $b)) (else (if (result i32) (i32.gt_s (local.get $a) (local.get $c)) (then (local.get $c)) (else (local.get $a)))))",
+  "P04": "(if (result i32) (i32.lt_s (local.get $a) (i32.const 0)) (then (i32.sub (i32.const 0) (local.get $a))) (else (local.get $a)))",
+  "P05": "(i32.sub (i32.gt_s (local.get $a) (i32.const 0)) (i32.lt_s (local.get $a) (i32.const 0)))",
+  "P06": "(i32.div_s (i32.mul (local.get $a) (i32.add (local.get $a) (i32.const 1))) (i32.const 2))",
+  "P07": "(local $product i32)\n(local.set $product (i32.const 1))\n(block $done (loop $multiply (br_if $done (i32.le_s (local.get $a) (i32.const 1))) (local.set $product (i32.mul (local.get $product) (local.get $a))) (local.set $a (i32.sub (local.get $a) (i32.const 1))) (br $multiply)))\n(local.get $product)",
+  "P08": "(local $remainder i32)\n(block $done (loop $euclid (br_if $done (i32.eqz (local.get $b))) (local.set $remainder (i32.rem_u (local.get $a) (local.get $b))) (local.set $a (local.get $b)) (local.set $b (local.get $remainder)) (br $euclid)))\n(local.get $a)",
+  "P09": "(local $digits i32)\n(local.set $digits (i32.const 1))\n(block $done (loop $count (br_if $done (i32.lt_u (local.get $a) (i32.const 10))) (local.set $a (i32.div_u (local.get $a) (i32.const 10))) (local.set $digits (i32.add (local.get $digits) (i32.const 1))) (br $count)))\n(local.get $digits)",
+  "P10": "(local $divisor i32)\n(if (i32.lt_s (local.get $a) (i32.const 2)) (then (return (i32.const 0))))\n(local.set $divisor (i32.const 2))\n(block $done (loop $trial (br_if $done (i32.gt_s (i32.mul (local.get $divisor) (local.get $divisor)) (local.get $a))) (if (i32.eqz (i32.rem_u (local.get $a) (local.get $divisor))) (then (return (i32.const 0)))) (local.set $divisor (i32.add (local.get $divisor) (i32.const 1))) (br $trial)))\n(i32.const 1)"
+}

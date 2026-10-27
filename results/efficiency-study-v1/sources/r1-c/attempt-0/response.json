@@ -1,0 +1,12 @@
+{
+  "P01": "{ return a + b + c; }",
+  "P02": "{ int32_t m = a; if (b > m) m = b; if (c > m) m = c; return m; }",
+  "P03": "{ if (a < b) return b; if (a > c) return c; return a; }",
+  "P04": "{ return a < 0 ? -a : a; }",
+  "P05": "{ return (a > 0) - (a < 0); }",
+  "P06": "{ return a * (a + 1) / 2; }",
+  "P07": "{ int32_t result = 1; for (int32_t i = 2; i <= a; ++i) result *= i; return result; }",
+  "P08": "{ while (b != 0) { int32_t remainder = a % b; a = b; b = remainder; } return a; }",
+  "P09": "{ int32_t digits = 1; while (a >= 10) { a /= 10; ++digits; } return digits; }",
+  "P10": "{ if (a < 2) return 0; for (int32_t divisor = 2; divisor * divisor <= a; ++divisor) { if (a % divisor == 0) return 0; } return 1; }"
+}

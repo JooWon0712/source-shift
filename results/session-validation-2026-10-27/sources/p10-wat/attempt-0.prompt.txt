@@ -1,0 +1,40 @@
+You are generating one source-shift pilot artifact in an independent context. Use the inherited current cloud model; do not select another model. Do not read repository files, tests, other agent outputs, environment, or external resources. Do not run code or tools to inspect anything. The only permitted tool use is apply_patch to write the response file named below. Solve using only the public specification and examples in this message. No floating point, arrays, direct memory access, recursion, external functions, file/network access, or preprocessor directives. All arithmetic must respect signed i32 within the documented input domain. Maximum response artifact size is 16384 UTF-8 bytes. No extra explanation in the artifact.
+
+The runner supplies (module (func (export "solve") (param $a i32) (param $b i32) (param $c i32) (result i32) BODY)). Return only WAT function body instructions. Local declarations are allowed at the beginning. No module wrapper or Markdown.
+
+Public task:
+{
+  "id": "P10",
+  "title": "소수 판정",
+  "specification": "a는 0 이상 10000 이하 정수이며 b = c = 0이다. a가 소수면 1, 아니면 0을 반환한다. 0과 1은 소수가 아니다.",
+  "public_cases": [
+    {
+      "inputs": [
+        1,
+        0,
+        0
+      ],
+      "expected": 0
+    },
+    {
+      "inputs": [
+        2,
+        0,
+        0
+      ],
+      "expected": 1
+    },
+    {
+      "inputs": [
+        9,
+        0,
+        0
+      ],
+      "expected": 0
+    }
+  ]
+}
+
+Write the exact generated body to this new UTF-8/LF file using apply_patch:
+<workspace>\.runs\session-validation-20261027-115237\p10-wat\attempt-0\response.txt
+Do not modify any other file. In the final answer say only that the artifact was saved.

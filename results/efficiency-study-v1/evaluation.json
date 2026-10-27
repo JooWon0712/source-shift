@@ -1,0 +1,1627 @@
+{
+  "protocol": {
+    "experiment_id": "SS-002-BATCH-001",
+    "kind": "session-batch-pilot",
+    "frozen_at": "2026-10-27T13:13:20.496313+00:00",
+    "scope": "10-task batch; pilot only; not unseen evaluation",
+    "dataset_version": "ss-001-pilot-v1",
+    "replicates": 3,
+    "unit_of_replication": "independent context for one 10-task batch, not individual function",
+    "model_selection": "inherit current session; no override",
+    "provider_output_token_cap": null,
+    "max_repairs_per_batch": 2,
+    "artifact_byte_cap": 32768,
+    "generation_order": [
+      "r1-c",
+      "r1-wat",
+      "r2-wat",
+      "r2-c",
+      "r3-c",
+      "r3-wat"
+    ],
+    "dispatch": "serial; exact saved prompt sent inline; one file write and final acknowledgement",
+    "wall_timeout_seconds": 10.0,
+    "fuel_per_case": 1000000,
+    "private_evaluation": "after all six batch generation/repair loops close; all attempts scored",
+    "primary_metrics": [
+      "first/final correctness",
+      "all generation/repair output tokens including reasoning",
+      "cache-neutral API-price scenario"
+    ],
+    "secondary_metrics": [
+      "reported cached/uncached input",
+      "whole generation-agent turn elapsed",
+      "build",
+      "JIT/instance cold",
+      "guest harness warm",
+      "body/full Wasm bytes"
+    ],
+    "decision": "Report each paired replicate. A practical primary cost advantage requires same final correctness and >=5% median reduction with the same direction in all 3 pairs. Otherwise cost winner is inconclusive. No population-level claim from this pilot.",
+    "api_price_scenario": {
+      "actual_billing": false,
+      "model_alias": "gpt-6.1-sol",
+      "as_of": "2026-10-27",
+      "service": "hypothetical Standard short-context API",
+      "source": "https://developers.openai.com/api/docs/pricing",
+      "ordinary_input_per_million_usd": 2,
+      "cached_input_per_million_usd": 0.1,
+      "output_per_million_usd": 10
+    },
+    "local_benchmark": {
+      "selected_replicate": 1,
+      "selection": "preselected first replicate; no best-case selection",
+      "build_rounds": 5,
+      "runtime_rounds": 5,
+      "cycles": 100,
+      "fuel": false,
+      "cranelift": "speed",
+      "parallel_compilation": false,
+      "warm_scope": "guest harness + imported Wasm solve + per-call expected check; no Python bridge per solve",
+      "background_load": "uncontrolled",
+      "no_GPU": true
+    },
+    "separate_api_calls": false,
+    "separate_billed_cost": null,
+    "tools": {
+      "python": "3.12.14",
+      "platform": "Windows-11-10.0.26300-SP0",
+      "wasmtime": "50.0.1",
+      "clang": "clang version 23.1.4 (https://github.com/llvm/llvm-project 7a941dfb2877a0b8cf30323fefa85ad019e0b0f5)",
+      "wasm_ld": "LLD 23.1.4 (https://github.com/llvm/llvm-project 7a941dfb2877a0b8cf30323fefa85ad019e0b0f5)"
+    },
+    "implementation_sha256": {
+      "__init__.py": "b6c5d2ae1f64eddd5e017499499be2355c6065316c572b7dd619b744d36dad57",
+      "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "_worker.py": "32c0cdfd2009fc720fa4141159c91c45132ebf0ad6e15b3956d19387d1c0e612",
+      "benchmark.py": "518def4b1cb7f0da94d101dd9a460b0e8bcc3dae3de6a345981c1f92fc68944a",
+      "body_contract.py": "16a91d71edbb8c65c8f61bfef5f844e29b14f9950254ccb977254b087b9a7e7d",
+      "cli.py": "499f431d47d808979d7bb5a1b3b0f04f5fb6fbe2965efd814edd439483b967e4",
+      "processes.py": "52f5e3e62f01b34ae0ad171642dc5d541d2b797fe29b8c166b78fade21953412",
+      "runner.py": "045d44834fb101549f5e07084db4f615f18455160d3bac6d13fb13c0b3d8dd07",
+      "runtime_config.py": "1b12736ca07a7408b803810659f7d2a7bda7fc0fd0ba47097f644d9b9a296d20",
+      "tasks.py": "a13723e0097e1902765a8bf8abcc10cccb67d7eeec7e56606a865d608fa0b875",
+      "templates.py": "4f1d30490375fe6c90a95772d579a1021167b4a2a48fdcd2b902898eb7d61338",
+      "usage.py": "570e18f4460f15abb2f5fc7104c4bc142c33d4c29a1ac338f3cd5ab237dbbe92"
+    },
+    "orchestrator_sha256": "43a2fc309980c00b114506d9e505aad3a6d9408bacc693cfd4a3f4d3632864c1"
+  },
+  "finalized_at": "2026-10-27T13:25:09.337928+00:00",
+  "rows": [
+    {
+      "job": "r1-c",
+      "replicate": 1,
+      "route": "c",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "response_sha256": "7be8f88515bb93b2a0155761370b7e1260034f1e10c08d0b7c4bfcda503d07d0",
+          "reports": {
+            "P01": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 71,
+                "total": 71
+              },
+              "sizes": {
+                "body_bytes": 21,
+                "source_bytes": 93,
+                "wasm_bytes": 364
+              },
+              "public_check_wall_seconds": 2.3823323999531567,
+              "posthoc_wall_seconds": 3.8249500999227166,
+              "dataset_sha256": "10c6ae671d755163412c53b70d270cfe471339fec2d35a7ab187db63f3cb270d",
+              "body_sha256": "64fa7a3f21c006e8589f2fe510f24a13acb5203775fe2354cacafb95f8f68af9",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132227-aef0783e755a"
+            },
+            "P02": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 74,
+                "total": 74
+              },
+              "sizes": {
+                "body_bytes": 64,
+                "source_bytes": 136,
+                "wasm_bytes": 376
+              },
+              "public_check_wall_seconds": 1.5397244999185205,
+              "posthoc_wall_seconds": 2.894788699923083,
+              "dataset_sha256": "046e3bd64077ae0d24ac0056a7521e8f5d02e9819177c27400b764924906b909",
+              "body_sha256": "8fa5d2d0fdc08e3bfafb7e0012084262796ec993ebaf1a6a278ed5e670aca2cd",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132231-b6379ca8ac0e"
+            },
+            "P03": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 76,
+                "total": 76
+              },
+              "sizes": {
+                "body_bytes": 55,
+                "source_bytes": 127,
+                "wasm_bytes": 374
+              },
+              "public_check_wall_seconds": 1.5959679998923093,
+              "posthoc_wall_seconds": 2.526033699978143,
+              "dataset_sha256": "7102e9fc8d280c2873f85d28ee78ee98075954ef6bd4064dbe43589c211d7d86",
+              "body_sha256": "c06978296308994b629b37c346b00165f2f8a505610ae00d22591fec9ad80e45",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132234-4744c321a93b"
+            },
+            "P04": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 70,
+                "total": 70
+              },
+              "sizes": {
+                "body_bytes": 26,
+                "source_bytes": 98,
+                "wasm_bytes": 371
+              },
+              "public_check_wall_seconds": 1.5268858999479562,
+              "posthoc_wall_seconds": 2.435330600012094,
+              "dataset_sha256": "b45c92a90635b7a0c8b6b970adb69444c94755053cb2f213957d4083da0baa07",
+              "body_sha256": "9a656d037bde0a3eb1351e049da3a8272315de597805dc71e408e48ea831bba5",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132236-d24804d02fbe"
+            },
+            "P05": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 70,
+                "total": 70
+              },
+              "sizes": {
+                "body_bytes": 29,
+                "source_bytes": 101,
+                "wasm_bytes": 367
+              },
+              "public_check_wall_seconds": 1.5306649999693036,
+              "posthoc_wall_seconds": 2.6366518000140786,
+              "dataset_sha256": "85a520aab4fca8a9b777ff147a252bf189ec00d872781c89e77aefcb7e9f91b3",
+              "body_sha256": "dd4bb73265fe430562fc1479d324ed916b98060266eee9ea444923766cc0ae29",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132239-95d8d8660e80"
+            },
+            "P06": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 71,
+                "total": 71
+              },
+              "sizes": {
+                "body_bytes": 27,
+                "source_bytes": 99,
+                "wasm_bytes": 367
+              },
+              "public_check_wall_seconds": 1.5725114999804646,
+              "posthoc_wall_seconds": 2.5715153000783175,
+              "dataset_sha256": "3aa75892e6ae63e5a1e672cdb1fcb989ae5b45f01716ed52983161ea61e7490f",
+              "body_sha256": "6cb5dd64e7913a0e98eb398269855d7e73a632a272198da2abb760498ac24cac",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132241-bd91d4454d66"
+            },
+            "P07": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 10,
+                "total": 10
+              },
+              "sizes": {
+                "body_bytes": 84,
+                "source_bytes": 156,
+                "wasm_bytes": 532
+              },
+              "public_check_wall_seconds": 1.5636479000095278,
+              "posthoc_wall_seconds": 2.6198111998382956,
+              "dataset_sha256": "3a4a862732b3bc9781e66dedd43024044d451ce74f9632323edf03afe289f698",
+              "body_sha256": "c69bf6c29ad4645a77a6f53d22d145d2a7ab8841c4cf3b83e99cc23604fdcbed",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132244-f1b15a99dbfd"
+            },
+            "P08": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 77,
+                "total": 77
+              },
+              "sizes": {
+                "body_bytes": 81,
+                "source_bytes": 153,
+                "wasm_bytes": 390
+              },
+              "public_check_wall_seconds": 1.5136881999205798,
+              "posthoc_wall_seconds": 2.8942340000066906,
+              "dataset_sha256": "12e5f7e7b0f3e0782186aa5e2fd1cf8dbb5f48b68ed2dfd8b29533f456ea960a",
+              "body_sha256": "2ad315e21a5e393dae2f5bbb9f701fcfd6bc06a3d0d066d0c2e8c8c9be4f44e4",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132246-705ccbdf530f"
+            },
+            "P09": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 83,
+                "total": 83
+              },
+              "sizes": {
+                "body_bytes": 77,
+                "source_bytes": 149,
+                "wasm_bytes": 407
+              },
+              "public_check_wall_seconds": 1.528684299904853,
+              "posthoc_wall_seconds": 2.878307699924335,
+              "dataset_sha256": "8c5890b5a6f6698cd27487842bb357a97ff3f08073a926e7463c20b45336272c",
+              "body_sha256": "aea9ea29c4b0a7359ccbb334adfb6dcf17d3722a47c8d7bc7d965b99eb3fe67c",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132249-33e861289c5d"
+            },
+            "P10": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 82,
+                "total": 82
+              },
+              "sizes": {
+                "body_bytes": 131,
+                "source_bytes": 203,
+                "wasm_bytes": 433
+              },
+              "public_check_wall_seconds": 1.568573100026697,
+              "posthoc_wall_seconds": 2.7214172000531107,
+              "dataset_sha256": "c1d692698c39960df7859ada0809a84ac3572eb362551e4957c8afa5e50a39ce",
+              "body_sha256": "abe1372dda24478af8a7b069260a12a61eab3eb25637cd1813fd3ae6e13f01db",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132252-efdd94da0486"
+            }
+          },
+          "public_status": "passed",
+          "artifact_file": "sources/r1-c/attempt-0/response.json"
+        }
+      ]
+    },
+    {
+      "job": "r1-wat",
+      "replicate": 1,
+      "route": "wat",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "response_sha256": "caa6e54bc91ae569ff2e5bde818215c63f946b93775c6f43b118d5f4ab4021d5",
+          "reports": {
+            "P01": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 71,
+                "total": 71
+              },
+              "sizes": {
+                "body_bytes": 64,
+                "source_bytes": 162,
+                "wasm_bytes": 68
+              },
+              "public_check_wall_seconds": 2.623290600022301,
+              "posthoc_wall_seconds": 3.0299564998131245,
+              "dataset_sha256": "10c6ae671d755163412c53b70d270cfe471339fec2d35a7ab187db63f3cb270d",
+              "body_sha256": "324523de6c13ec1f9aabe5946ead66ec6e263d98da4cbbbb86787f35a35b0848",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132255-eab4b8e3cd85"
+            },
+            "P02": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 74,
+                "total": 74
+              },
+              "sizes": {
+                "body_bytes": 189,
+                "source_bytes": 287,
+                "wasm_bytes": 87
+              },
+              "public_check_wall_seconds": 1.8401452000252903,
+              "posthoc_wall_seconds": 2.8600991999264807,
+              "dataset_sha256": "046e3bd64077ae0d24ac0056a7521e8f5d02e9819177c27400b764924906b909",
+              "body_sha256": "67026c1eda9b86c3f5471121d0cca08222940220ff4e47e9933400ee40336dd0",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132258-a0ddfb014b5b"
+            },
+            "P03": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 76,
+                "total": 76
+              },
+              "sizes": {
+                "body_bytes": 190,
+                "source_bytes": 288,
+                "wasm_bytes": 84
+              },
+              "public_check_wall_seconds": 1.880301799857989,
+              "posthoc_wall_seconds": 2.775651799980551,
+              "dataset_sha256": "7102e9fc8d280c2873f85d28ee78ee98075954ef6bd4064dbe43589c211d7d86",
+              "body_sha256": "a4b23c4ca6abd42d412304b25527daa9fedd1fefbcf582f50c0d74b4611a733a",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132301-a0552a934b42"
+            },
+            "P04": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 70,
+                "total": 70
+              },
+              "sizes": {
+                "body_bytes": 102,
+                "source_bytes": 200,
+                "wasm_bytes": 73
+              },
+              "public_check_wall_seconds": 1.9655422000214458,
+              "posthoc_wall_seconds": 2.795254399999976,
+              "dataset_sha256": "b45c92a90635b7a0c8b6b970adb69444c94755053cb2f213957d4083da0baa07",
+              "body_sha256": "ebacc0e764eb03bb034c4343e778de8906e3ebf7bb3e2bc5bdf0bba1e660928a",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132304-2f89398bb1e7"
+            },
+            "P05": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 70,
+                "total": 70
+              },
+              "sizes": {
+                "body_bytes": 89,
+                "source_bytes": 187,
+                "wasm_bytes": 71
+              },
+              "public_check_wall_seconds": 2.115310200024396,
+              "posthoc_wall_seconds": 2.710084999911487,
+              "dataset_sha256": "85a520aab4fca8a9b777ff147a252bf189ec00d872781c89e77aefcb7e9f91b3",
+              "body_sha256": "416b12ce25ae6fecb9f227a84b73229794233c53f597ac442035d00fde02c4e6",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132306-4dd8f0dab56f"
+            },
+            "P06": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 71,
+                "total": 71
+              },
+              "sizes": {
+                "body_bytes": 89,
+                "source_bytes": 187,
+                "wasm_bytes": 71
+              },
+              "public_check_wall_seconds": 1.9934038000646979,
+              "posthoc_wall_seconds": 2.725656099850312,
+              "dataset_sha256": "3aa75892e6ae63e5a1e672cdb1fcb989ae5b45f01716ed52983161ea61e7490f",
+              "body_sha256": "96af184f8d93d5ad5af77aca34301cdd11f683a7c9f90dc3f6f64dd7f3747032",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132309-1627ba7f7fd0"
+            },
+            "P07": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 10,
+                "total": 10
+              },
+              "sizes": {
+                "body_bytes": 259,
+                "source_bytes": 357,
+                "wasm_bytes": 117
+              },
+              "public_check_wall_seconds": 2.2855456001125276,
+              "posthoc_wall_seconds": 2.534238199936226,
+              "dataset_sha256": "3a4a862732b3bc9781e66dedd43024044d451ce74f9632323edf03afe289f698",
+              "body_sha256": "19464bc73641c0e0b26542c1c5b2359c224823151d198c14f95ae824dc4fe99c",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132312-ec27b8eb3609"
+            },
+            "P08": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 77,
+                "total": 77
+              },
+              "sizes": {
+                "body_bytes": 223,
+                "source_bytes": 321,
+                "wasm_bytes": 112
+              },
+              "public_check_wall_seconds": 2.366438199998811,
+              "posthoc_wall_seconds": 2.896659400081262,
+              "dataset_sha256": "12e5f7e7b0f3e0782186aa5e2fd1cf8dbb5f48b68ed2dfd8b29533f456ea960a",
+              "body_sha256": "aa00564bdc85511bee331dd5fc038fa7c538616f83e9a57cf4e9b9ea1d4b9913",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132314-3850f5675151"
+            },
+            "P09": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 83,
+                "total": 83
+              },
+              "sizes": {
+                "body_bytes": 287,
+                "source_bytes": 385,
+                "wasm_bytes": 122
+              },
+              "public_check_wall_seconds": 2.117373899789527,
+              "posthoc_wall_seconds": 2.7817534001078457,
+              "dataset_sha256": "8c5890b5a6f6698cd27487842bb357a97ff3f08073a926e7463c20b45336272c",
+              "body_sha256": "c3485b298429c1ba21754810beb936e00ac722b697810b530af62588cf52c352",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132317-9e1a675a42ca"
+            },
+            "P10": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 82,
+                "total": 82
+              },
+              "sizes": {
+                "body_bytes": 391,
+                "source_bytes": 489,
+                "wasm_bytes": 136
+              },
+              "public_check_wall_seconds": 1.878444500034675,
+              "posthoc_wall_seconds": 2.810421099886298,
+              "dataset_sha256": "c1d692698c39960df7859ada0809a84ac3572eb362551e4957c8afa5e50a39ce",
+              "body_sha256": "d398e67310bb1b34d9fbb7dba5b21ed812028c665a9f61331225732b630b53b0",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132320-7385a08a5715"
+            }
+          },
+          "public_status": "passed",
+          "artifact_file": "sources/r1-wat/attempt-0/response.json"
+        }
+      ]
+    },
+    {
+      "job": "r2-wat",
+      "replicate": 2,
+      "route": "wat",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "response_sha256": "d428c95dda3359fe1f74989bcab0fb03b1ebbeee4396994b3d9e315ef2a28fe8",
+          "reports": {
+            "P01": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 71,
+                "total": 71
+              },
+              "sizes": {
+                "body_bytes": 64,
+                "source_bytes": 162,
+                "wasm_bytes": 68
+              },
+              "public_check_wall_seconds": 2.5110321999527514,
+              "posthoc_wall_seconds": 3.160342799965292,
+              "dataset_sha256": "10c6ae671d755163412c53b70d270cfe471339fec2d35a7ab187db63f3cb270d",
+              "body_sha256": "324523de6c13ec1f9aabe5946ead66ec6e263d98da4cbbbb86787f35a35b0848",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132323-d8ad4ca45c86"
+            },
+            "P02": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 74,
+                "total": 74
+              },
+              "sizes": {
+                "body_bytes": 174,
+                "source_bytes": 272,
+                "wasm_bytes": 82
+              },
+              "public_check_wall_seconds": 1.679873300017789,
+              "posthoc_wall_seconds": 2.7928458000533283,
+              "dataset_sha256": "046e3bd64077ae0d24ac0056a7521e8f5d02e9819177c27400b764924906b909",
+              "body_sha256": "e95d2e7feea457f5e40f66adb203677d092960d6e26f70100c77e78ac4d59bdf",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132326-7cbd94181374"
+            },
+            "P03": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 76,
+                "total": 76
+              },
+              "sizes": {
+                "body_bytes": 190,
+                "source_bytes": 288,
+                "wasm_bytes": 84
+              },
+              "public_check_wall_seconds": 1.7121268000919372,
+              "posthoc_wall_seconds": 2.718266800045967,
+              "dataset_sha256": "7102e9fc8d280c2873f85d28ee78ee98075954ef6bd4064dbe43589c211d7d86",
+              "body_sha256": "a4b23c4ca6abd42d412304b25527daa9fedd1fefbcf582f50c0d74b4611a733a",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132329-64ef29423f68"
+            },
+            "P04": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 70,
+                "total": 70
+              },
+              "sizes": {
+                "body_bytes": 125,
+                "source_bytes": 223,
+                "wasm_bytes": 76
+              },
+              "public_check_wall_seconds": 1.6722941999323666,
+              "posthoc_wall_seconds": 2.6811041000764817,
+              "dataset_sha256": "b45c92a90635b7a0c8b6b970adb69444c94755053cb2f213957d4083da0baa07",
+              "body_sha256": "c49b560b53caca12dd0730d1782fd21f67f55f0f0c1ac546ebada7a3d150b683",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132332-3e139c72b782"
+            },
+            "P05": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 70,
+                "total": 70
+              },
+              "sizes": {
+                "body_bytes": 89,
+                "source_bytes": 187,
+                "wasm_bytes": 71
+              },
+              "public_check_wall_seconds": 1.6909918999299407,
+              "posthoc_wall_seconds": 2.5969748999923468,
+              "dataset_sha256": "85a520aab4fca8a9b777ff147a252bf189ec00d872781c89e77aefcb7e9f91b3",
+              "body_sha256": "416b12ce25ae6fecb9f227a84b73229794233c53f597ac442035d00fde02c4e6",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132334-349bfe547dd5"
+            },
+            "P06": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 71,
+                "total": 71
+              },
+              "sizes": {
+                "body_bytes": 89,
+                "source_bytes": 187,
+                "wasm_bytes": 71
+              },
+              "public_check_wall_seconds": 1.7059604001697153,
+              "posthoc_wall_seconds": 2.8839368000626564,
+              "dataset_sha256": "3aa75892e6ae63e5a1e672cdb1fcb989ae5b45f01716ed52983161ea61e7490f",
+              "body_sha256": "96af184f8d93d5ad5af77aca34301cdd11f683a7c9f90dc3f6f64dd7f3747032",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132337-c37a99765865"
+            },
+            "P07": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 10,
+                "total": 10
+              },
+              "sizes": {
+                "body_bytes": 297,
+                "source_bytes": 395,
+                "wasm_bytes": 127
+              },
+              "public_check_wall_seconds": 1.6913813999854028,
+              "posthoc_wall_seconds": 2.792478600051254,
+              "dataset_sha256": "3a4a862732b3bc9781e66dedd43024044d451ce74f9632323edf03afe289f698",
+              "body_sha256": "5e977506760c326febbf5f5771ee7c87f10d735c082993fd74b49593a7909c77",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132340-1a60cd3c5353"
+            },
+            "P08": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 77,
+                "total": 77
+              },
+              "sizes": {
+                "body_bytes": 251,
+                "source_bytes": 349,
+                "wasm_bytes": 122
+              },
+              "public_check_wall_seconds": 1.760324199916795,
+              "posthoc_wall_seconds": 2.7939990998711437,
+              "dataset_sha256": "12e5f7e7b0f3e0782186aa5e2fd1cf8dbb5f48b68ed2dfd8b29533f456ea960a",
+              "body_sha256": "7492e2b7aa3e28ba75c726d0fee0142352a9890d0738c549d901b3c0603e6e42",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132343-d32477b5bd48"
+            },
+            "P09": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 83,
+                "total": 83
+              },
+              "sizes": {
+                "body_bytes": 289,
+                "source_bytes": 387,
+                "wasm_bytes": 123
+              },
+              "public_check_wall_seconds": 1.7566452999599278,
+              "posthoc_wall_seconds": 2.734478499973193,
+              "dataset_sha256": "8c5890b5a6f6698cd27487842bb357a97ff3f08073a926e7463c20b45336272c",
+              "body_sha256": "c6cf332394312fec16477d0c8b8924868cf377580043d70a277aa5aba996ff7f",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132345-31922cd0cf6e"
+            },
+            "P10": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 82,
+                "total": 82
+              },
+              "sizes": {
+                "body_bytes": 435,
+                "source_bytes": 533,
+                "wasm_bytes": 143
+              },
+              "public_check_wall_seconds": 1.7470921999774873,
+              "posthoc_wall_seconds": 2.78622950008139,
+              "dataset_sha256": "c1d692698c39960df7859ada0809a84ac3572eb362551e4957c8afa5e50a39ce",
+              "body_sha256": "275bebf1be3c46cc0c3e19f462418eaae91bae0b702abd0032460fa9a71f679b",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132348-c605c63512f5"
+            }
+          },
+          "public_status": "passed",
+          "artifact_file": "sources/r2-wat/attempt-0/response.json"
+        }
+      ]
+    },
+    {
+      "job": "r2-c",
+      "replicate": 2,
+      "route": "c",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "response_sha256": "7094b600d127cbea893b47a51001b94549c868f399c07d652b18bd2a85bdbda7",
+          "reports": {
+            "P01": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 71,
+                "total": 71
+              },
+              "sizes": {
+                "body_bytes": 25,
+                "source_bytes": 97,
+                "wasm_bytes": 364
+              },
+              "public_check_wall_seconds": 2.3231071000918746,
+              "posthoc_wall_seconds": 2.8589791001286358,
+              "dataset_sha256": "10c6ae671d755163412c53b70d270cfe471339fec2d35a7ab187db63f3cb270d",
+              "body_sha256": "324d7d9d9d1ce35098eb50d1d3c446072bcadd9cd7d7d78b9353ac30a4cba514",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132351-ec4eccb43661"
+            },
+            "P02": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 74,
+                "total": 74
+              },
+              "sizes": {
+                "body_bytes": 116,
+                "source_bytes": 188,
+                "wasm_bytes": 376
+              },
+              "public_check_wall_seconds": 1.5426741000264883,
+              "posthoc_wall_seconds": 2.6740761999972165,
+              "dataset_sha256": "046e3bd64077ae0d24ac0056a7521e8f5d02e9819177c27400b764924906b909",
+              "body_sha256": "e942b0705537904b9f60ab501539b302a3be8593a56613b4aeb071bae481fa06",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132354-d0cea2192122"
+            },
+            "P03": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 76,
+                "total": 76
+              },
+              "sizes": {
+                "body_bytes": 67,
+                "source_bytes": 139,
+                "wasm_bytes": 374
+              },
+              "public_check_wall_seconds": 1.6626264001242816,
+              "posthoc_wall_seconds": 2.4721534999553114,
+              "dataset_sha256": "7102e9fc8d280c2873f85d28ee78ee98075954ef6bd4064dbe43589c211d7d86",
+              "body_sha256": "f383c251af28db8873c28c02fd5c98389401aada93b203bd6a1d02b97549d114",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132357-ad728a4b3305"
+            },
+            "P04": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 70,
+                "total": 70
+              },
+              "sizes": {
+                "body_bytes": 30,
+                "source_bytes": 102,
+                "wasm_bytes": 371
+              },
+              "public_check_wall_seconds": 1.5956437999848276,
+              "posthoc_wall_seconds": 2.537718900013715,
+              "dataset_sha256": "b45c92a90635b7a0c8b6b970adb69444c94755053cb2f213957d4083da0baa07",
+              "body_sha256": "7279a6754d5fced3e01f4529634e33fc12111d826c792ac7af441025fdf9dba1",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132359-d117ee623029"
+            },
+            "P05": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 70,
+                "total": 70
+              },
+              "sizes": {
+                "body_bytes": 68,
+                "source_bytes": 140,
+                "wasm_bytes": 367
+              },
+              "public_check_wall_seconds": 1.8136120000854135,
+              "posthoc_wall_seconds": 2.5807512998580933,
+              "dataset_sha256": "85a520aab4fca8a9b777ff147a252bf189ec00d872781c89e77aefcb7e9f91b3",
+              "body_sha256": "be84f85ede81b42847bc425da7e7e2ee7c2969e34884764fc5d3f956e04b8c06",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132402-b7aae1ceb07f"
+            },
+            "P06": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 71,
+                "total": 71
+              },
+              "sizes": {
+                "body_bytes": 31,
+                "source_bytes": 103,
+                "wasm_bytes": 367
+              },
+              "public_check_wall_seconds": 1.9800988999195397,
+              "posthoc_wall_seconds": 2.5645905998535454,
+              "dataset_sha256": "3aa75892e6ae63e5a1e672cdb1fcb989ae5b45f01716ed52983161ea61e7490f",
+              "body_sha256": "3c8f27d0f05a567a496d99e4a1f0363473ef936057e0cc5a6b53ab5fb1d05561",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132404-a7e49914d091"
+            },
+            "P07": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 10,
+                "total": 10
+              },
+              "sizes": {
+                "body_bytes": 96,
+                "source_bytes": 168,
+                "wasm_bytes": 532
+              },
+              "public_check_wall_seconds": 1.9550373998936266,
+              "posthoc_wall_seconds": 2.3874460998922586,
+              "dataset_sha256": "3a4a862732b3bc9781e66dedd43024044d451ce74f9632323edf03afe289f698",
+              "body_sha256": "1fee93e73c03555bd58906116a92b83db163e2ad510029d4163d5d1f7bb99273",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132407-f24c49ba7867"
+            },
+            "P08": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 77,
+                "total": 77
+              },
+              "sizes": {
+                "body_bytes": 117,
+                "source_bytes": 189,
+                "wasm_bytes": 390
+              },
+              "public_check_wall_seconds": 1.7391456000041217,
+              "posthoc_wall_seconds": 2.5469790999777615,
+              "dataset_sha256": "12e5f7e7b0f3e0782186aa5e2fd1cf8dbb5f48b68ed2dfd8b29533f456ea960a",
+              "body_sha256": "9ec19b469f868ce519af1d1d82b0696004a1d8e33115cce8c11009a9f66f31d8",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132409-250e4d0ea682"
+            },
+            "P09": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 83,
+                "total": 83
+              },
+              "sizes": {
+                "body_bytes": 109,
+                "source_bytes": 181,
+                "wasm_bytes": 407
+              },
+              "public_check_wall_seconds": 1.7537062000483274,
+              "posthoc_wall_seconds": 2.5399784999899566,
+              "dataset_sha256": "8c5890b5a6f6698cd27487842bb357a97ff3f08073a926e7463c20b45336272c",
+              "body_sha256": "a15b456c8a9af6d372cdcb6e452a6f41b4002610cbab59b6e1d52167cae837bd",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132412-4e0f25e8a356"
+            },
+            "P10": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 82,
+                "total": 82
+              },
+              "sizes": {
+                "body_bytes": 155,
+                "source_bytes": 227,
+                "wasm_bytes": 433
+              },
+              "public_check_wall_seconds": 1.5104290000163019,
+              "posthoc_wall_seconds": 2.6657078000716865,
+              "dataset_sha256": "c1d692698c39960df7859ada0809a84ac3572eb362551e4957c8afa5e50a39ce",
+              "body_sha256": "3fd36e44358b38a841410735c1a36b882601f87eac0637f6e09b1325c8d1bb41",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132414-2ffec14e260e"
+            }
+          },
+          "public_status": "passed",
+          "artifact_file": "sources/r2-c/attempt-0/response.json"
+        }
+      ]
+    },
+    {
+      "job": "r3-c",
+      "replicate": 3,
+      "route": "c",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "response_sha256": "862be227d95a017c480fb87dd20a0ea083d4eb0e035e6ccf098d81718b036ee0",
+          "reports": {
+            "P01": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 71,
+                "total": 71
+              },
+              "sizes": {
+                "body_bytes": 25,
+                "source_bytes": 97,
+                "wasm_bytes": 364
+              },
+              "public_check_wall_seconds": 3.2198580000549555,
+              "posthoc_wall_seconds": 2.690146599896252,
+              "dataset_sha256": "10c6ae671d755163412c53b70d270cfe471339fec2d35a7ab187db63f3cb270d",
+              "body_sha256": "324d7d9d9d1ce35098eb50d1d3c446072bcadd9cd7d7d78b9353ac30a4cba514",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132417-13833d179a75"
+            },
+            "P02": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 74,
+                "total": 74
+              },
+              "sizes": {
+                "body_bytes": 116,
+                "source_bytes": 188,
+                "wasm_bytes": 376
+              },
+              "public_check_wall_seconds": 2.276219599880278,
+              "posthoc_wall_seconds": 2.6679016000125557,
+              "dataset_sha256": "046e3bd64077ae0d24ac0056a7521e8f5d02e9819177c27400b764924906b909",
+              "body_sha256": "e942b0705537904b9f60ab501539b302a3be8593a56613b4aeb071bae481fa06",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132420-d64bce5fe82a"
+            },
+            "P03": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 76,
+                "total": 76
+              },
+              "sizes": {
+                "body_bytes": 67,
+                "source_bytes": 139,
+                "wasm_bytes": 374
+              },
+              "public_check_wall_seconds": 1.8468841998837888,
+              "posthoc_wall_seconds": 2.505616599926725,
+              "dataset_sha256": "7102e9fc8d280c2873f85d28ee78ee98075954ef6bd4064dbe43589c211d7d86",
+              "body_sha256": "f383c251af28db8873c28c02fd5c98389401aada93b203bd6a1d02b97549d114",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132422-68b53cfb7e6f"
+            },
+            "P04": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 70,
+                "total": 70
+              },
+              "sizes": {
+                "body_bytes": 56,
+                "source_bytes": 128,
+                "wasm_bytes": 371
+              },
+              "public_check_wall_seconds": 1.7302917002234608,
+              "posthoc_wall_seconds": 2.525483699981123,
+              "dataset_sha256": "b45c92a90635b7a0c8b6b970adb69444c94755053cb2f213957d4083da0baa07",
+              "body_sha256": "4b28ea278763c62c1a6d8aa2b4d4c0ae52a2adb57dba0c1d3ac3a7dc01985854",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132425-eb248e239d6b"
+            },
+            "P05": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 70,
+                "total": 70
+              },
+              "sizes": {
+                "body_bytes": 59,
+                "source_bytes": 131,
+                "wasm_bytes": 367
+              },
+              "public_check_wall_seconds": 1.6426317000295967,
+              "posthoc_wall_seconds": 2.6023376998491585,
+              "dataset_sha256": "85a520aab4fca8a9b777ff147a252bf189ec00d872781c89e77aefcb7e9f91b3",
+              "body_sha256": "e2e32970ff5f2bb752d26edb3161d1a590bde20edd8193fff02437827d91a935",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132427-a44c1177480f"
+            },
+            "P06": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 71,
+                "total": 71
+              },
+              "sizes": {
+                "body_bytes": 57,
+                "source_bytes": 129,
+                "wasm_bytes": 367
+              },
+              "public_check_wall_seconds": 1.5778425000607967,
+              "posthoc_wall_seconds": 2.6338720999192446,
+              "dataset_sha256": "3aa75892e6ae63e5a1e672cdb1fcb989ae5b45f01716ed52983161ea61e7490f",
+              "body_sha256": "88b5f3e38e58af74dc1a35f9ae8d67f279b39f123a478fab4646e3635e14312a",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132430-d143c298bfc6"
+            },
+            "P07": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 10,
+                "total": 10
+              },
+              "sizes": {
+                "body_bytes": 125,
+                "source_bytes": 197,
+                "wasm_bytes": 532
+              },
+              "public_check_wall_seconds": 1.5469607999548316,
+              "posthoc_wall_seconds": 2.3434210000559688,
+              "dataset_sha256": "3a4a862732b3bc9781e66dedd43024044d451ce74f9632323edf03afe289f698",
+              "body_sha256": "908d35d3809180057c7f33859a434e2e170b86f9a7ed8e6e32a358406456af52",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132433-31434cfdb176"
+            },
+            "P08": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 77,
+                "total": 77
+              },
+              "sizes": {
+                "body_bytes": 130,
+                "source_bytes": 202,
+                "wasm_bytes": 390
+              },
+              "public_check_wall_seconds": 1.4937162999995053,
+              "posthoc_wall_seconds": 2.4145956998690963,
+              "dataset_sha256": "12e5f7e7b0f3e0782186aa5e2fd1cf8dbb5f48b68ed2dfd8b29533f456ea960a",
+              "body_sha256": "5ae36a92772f08938fba2e371744a072caea330d0c197a90ce05ff8e25659273",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132435-dd4346269dbe"
+            },
+            "P09": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 83,
+                "total": 83
+              },
+              "sizes": {
+                "body_bytes": 135,
+                "source_bytes": 207,
+                "wasm_bytes": 407
+              },
+              "public_check_wall_seconds": 1.5424232999794185,
+              "posthoc_wall_seconds": 2.5020187001209706,
+              "dataset_sha256": "8c5890b5a6f6698cd27487842bb357a97ff3f08073a926e7463c20b45336272c",
+              "body_sha256": "2e1598f8b378bbbb50f359af7570648206d7dd70bbe02d27c2fde220e9f13be8",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132437-a38c14cce33a"
+            },
+            "P10": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 82,
+                "total": 82
+              },
+              "sizes": {
+                "body_bytes": 181,
+                "source_bytes": 253,
+                "wasm_bytes": 433
+              },
+              "public_check_wall_seconds": 1.5733978999778628,
+              "posthoc_wall_seconds": 2.4572978001087904,
+              "dataset_sha256": "c1d692698c39960df7859ada0809a84ac3572eb362551e4957c8afa5e50a39ce",
+              "body_sha256": "60d6bff9c0cbf5d85d0d27e8209c07bd9721e654966661b9996953703fed0174",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132440-cc5588cee8dd"
+            }
+          },
+          "public_status": "passed",
+          "artifact_file": "sources/r3-c/attempt-0/response.json"
+        }
+      ]
+    },
+    {
+      "job": "r3-wat",
+      "replicate": 3,
+      "route": "wat",
+      "repairs": 0,
+      "attempts": [
+        {
+          "index": 0,
+          "response_sha256": "846854e30f08e94dd8e3b4a0807573f5c62dbee7535c89cc9e7baa4309f6684d",
+          "reports": {
+            "P01": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 71,
+                "total": 71
+              },
+              "sizes": {
+                "body_bytes": 64,
+                "source_bytes": 162,
+                "wasm_bytes": 68
+              },
+              "public_check_wall_seconds": 2.494106200058013,
+              "posthoc_wall_seconds": 2.6870544000994414,
+              "dataset_sha256": "10c6ae671d755163412c53b70d270cfe471339fec2d35a7ab187db63f3cb270d",
+              "body_sha256": "324523de6c13ec1f9aabe5946ead66ec6e263d98da4cbbbb86787f35a35b0848",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132442-bbda15234b8f"
+            },
+            "P02": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 74,
+                "total": 74
+              },
+              "sizes": {
+                "body_bytes": 235,
+                "source_bytes": 333,
+                "wasm_bytes": 93
+              },
+              "public_check_wall_seconds": 1.991165699902922,
+              "posthoc_wall_seconds": 2.7165292999707162,
+              "dataset_sha256": "046e3bd64077ae0d24ac0056a7521e8f5d02e9819177c27400b764924906b909",
+              "body_sha256": "9b2c5d514ec819d82403cb9f2801d5f9a1664b2dd3a5691f1b6ce0cd1dd21f65",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132445-a341e3740e9b"
+            },
+            "P03": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 76,
+                "total": 76
+              },
+              "sizes": {
+                "body_bytes": 190,
+                "source_bytes": 288,
+                "wasm_bytes": 84
+              },
+              "public_check_wall_seconds": 1.8234988001640886,
+              "posthoc_wall_seconds": 2.7251689999829978,
+              "dataset_sha256": "7102e9fc8d280c2873f85d28ee78ee98075954ef6bd4064dbe43589c211d7d86",
+              "body_sha256": "a4b23c4ca6abd42d412304b25527daa9fedd1fefbcf582f50c0d74b4611a733a",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132448-9e22f88c35a4"
+            },
+            "P04": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 70,
+                "total": 70
+              },
+              "sizes": {
+                "body_bytes": 125,
+                "source_bytes": 223,
+                "wasm_bytes": 76
+              },
+              "public_check_wall_seconds": 1.9173041998874396,
+              "posthoc_wall_seconds": 2.6577484998852015,
+              "dataset_sha256": "b45c92a90635b7a0c8b6b970adb69444c94755053cb2f213957d4083da0baa07",
+              "body_sha256": "c49b560b53caca12dd0730d1782fd21f67f55f0f0c1ac546ebada7a3d150b683",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132450-16ea633e0658"
+            },
+            "P05": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 70,
+                "total": 70
+              },
+              "sizes": {
+                "body_bytes": 89,
+                "source_bytes": 187,
+                "wasm_bytes": 71
+              },
+              "public_check_wall_seconds": 1.8500490000005811,
+              "posthoc_wall_seconds": 2.502038799924776,
+              "dataset_sha256": "85a520aab4fca8a9b777ff147a252bf189ec00d872781c89e77aefcb7e9f91b3",
+              "body_sha256": "416b12ce25ae6fecb9f227a84b73229794233c53f597ac442035d00fde02c4e6",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132453-787a0f95a120"
+            },
+            "P06": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 71,
+                "total": 71
+              },
+              "sizes": {
+                "body_bytes": 89,
+                "source_bytes": 187,
+                "wasm_bytes": 71
+              },
+              "public_check_wall_seconds": 1.8679824999999255,
+              "posthoc_wall_seconds": 2.5540364999324083,
+              "dataset_sha256": "3aa75892e6ae63e5a1e672cdb1fcb989ae5b45f01716ed52983161ea61e7490f",
+              "body_sha256": "96af184f8d93d5ad5af77aca34301cdd11f683a7c9f90dc3f6f64dd7f3747032",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132456-c48d36ebe375"
+            },
+            "P07": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 10,
+                "total": 10
+              },
+              "sizes": {
+                "body_bytes": 256,
+                "source_bytes": 354,
+                "wasm_bytes": 118
+              },
+              "public_check_wall_seconds": 2.0596056999638677,
+              "posthoc_wall_seconds": 2.4701012999285012,
+              "dataset_sha256": "3a4a862732b3bc9781e66dedd43024044d451ce74f9632323edf03afe289f698",
+              "body_sha256": "16eb9b54a70710cd4191ca44d1b4cdcf545139790116530c1edaac648d6b8bf9",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132458-1d7809b43610"
+            },
+            "P08": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 77,
+                "total": 77
+              },
+              "sizes": {
+                "body_bytes": 225,
+                "source_bytes": 323,
+                "wasm_bytes": 113
+              },
+              "public_check_wall_seconds": 1.9577975999563932,
+              "posthoc_wall_seconds": 2.63959680008702,
+              "dataset_sha256": "12e5f7e7b0f3e0782186aa5e2fd1cf8dbb5f48b68ed2dfd8b29533f456ea960a",
+              "body_sha256": "aa93cbc612585fe18248912649588180d1b6ada1bc52b75ebb5c8fbddcc341b9",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132501-b77e2dd382a5"
+            },
+            "P09": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 83,
+                "total": 83
+              },
+              "sizes": {
+                "body_bytes": 289,
+                "source_bytes": 387,
+                "wasm_bytes": 123
+              },
+              "public_check_wall_seconds": 1.8932688001077622,
+              "posthoc_wall_seconds": 2.704058799892664,
+              "dataset_sha256": "8c5890b5a6f6698cd27487842bb357a97ff3f08073a926e7463c20b45336272c",
+              "body_sha256": "89b1136030cd513d5a0a49bd2332b797c8e9b31d829de37ca141b92c1294b658",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132503-aee45f9fb772"
+            },
+            "P10": {
+              "status": "passed",
+              "conversion_status": "passed",
+              "public": {
+                "status": "passed",
+                "passed": 3,
+                "total": 3
+              },
+              "private": {
+                "status": "passed",
+                "passed": 82,
+                "total": 82
+              },
+              "sizes": {
+                "body_bytes": 393,
+                "source_bytes": 491,
+                "wasm_bytes": 137
+              },
+              "public_check_wall_seconds": 1.9097021999768913,
+              "posthoc_wall_seconds": 2.74780200002715,
+              "dataset_sha256": "c1d692698c39960df7859ada0809a84ac3572eb362551e4957c8afa5e50a39ce",
+              "body_sha256": "160c1bdd40d6349e8681a93dc02a4b1411bbbbfc3c72993aa0a3930eef6045f7",
+              "raw_report": ".runs\\efficiency-study-v1\\posthoc-runs\\20261027T132506-d3ddb843ad24"
+            }
+          },
+          "public_status": "passed",
+          "artifact_file": "sources/r3-wat/attempt-0/response.json"
+        }
+      ]
+    }
+  ]
+}

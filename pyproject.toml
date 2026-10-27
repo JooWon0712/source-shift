@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "source-shift"
+version = "0.1.0"
+description = "C와 WAT 생성 경로를 비교하기 위한 실험 실행기"
+requires-python = ">=3.11"
+dependencies = ["wasmtime==50.0.1"]
+
+[project.scripts]
+source-shift = "source_shift.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

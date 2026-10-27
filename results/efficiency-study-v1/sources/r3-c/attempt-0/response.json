@@ -1,0 +1,12 @@
+{
+  "P01": "{\n    return a + b + c;\n}",
+  "P02": "{\n    int32_t maximum = a;\n    if (b > maximum) maximum = b;\n    if (c > maximum) maximum = c;\n    return maximum;\n}",
+  "P03": "{\n    if (a < b) return b;\n    if (a > c) return c;\n    return a;\n}",
+  "P04": "{\n    (void)b;\n    (void)c;\n    return a < 0 ? -a : a;\n}",
+  "P05": "{\n    (void)b;\n    (void)c;\n    return (a > 0) - (a < 0);\n}",
+  "P06": "{\n    (void)b;\n    (void)c;\n    return a * (a + 1) / 2;\n}",
+  "P07": "{\n    (void)b;\n    (void)c;\n    int32_t product = 1;\n    for (int32_t i = 2; i <= a; ++i) product *= i;\n    return product;\n}",
+  "P08": "{\n    (void)c;\n    while (b != 0) {\n        int32_t remainder = a % b;\n        a = b;\n        b = remainder;\n    }\n    return a;\n}",
+  "P09": "{\n    (void)b;\n    (void)c;\n    int32_t digits = 1;\n    while (a >= 10) {\n        a /= 10;\n        ++digits;\n    }\n    return digits;\n}",
+  "P10": "{\n    (void)b;\n    (void)c;\n    if (a < 2) return 0;\n    for (int32_t divisor = 2; divisor * divisor <= a; ++divisor) {\n        if (a % divisor == 0) return 0;\n    }\n    return 1;\n}"
+}

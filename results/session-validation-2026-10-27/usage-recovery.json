@@ -1,0 +1,514 @@
+{
+  "source": "local Codex token_usage_record entries, deduplicated by thread_id/response_id",
+  "scope": "20 generation subagents only; excludes primary agent, development, verification, browsing, and report preparation",
+  "actual_billed_cost": null,
+  "rows": [
+    {
+      "task_id": "P01",
+      "route": "c",
+      "generator_context": "/root/trial_p01_c",
+      "model_contexts": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra"
+        }
+      ],
+      "response_count": 2,
+      "completed_turns": 1,
+      "usage": {
+        "input_tokens": 63872,
+        "cached_input_tokens": 55680,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 77,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 63949
+      },
+      "reconciled_with_thread_total": true
+    },
+    {
+      "task_id": "P01",
+      "route": "wat",
+      "generator_context": "/root/trial_p01_wat",
+      "model_contexts": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra"
+        }
+      ],
+      "response_count": 2,
+      "completed_turns": 1,
+      "usage": {
+        "input_tokens": 63917,
+        "cached_input_tokens": 55168,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 96,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 64013
+      },
+      "reconciled_with_thread_total": true
+    },
+    {
+      "task_id": "P02",
+      "route": "c",
+      "generator_context": "/root/trial_p02_c",
+      "model_contexts": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra"
+        }
+      ],
+      "response_count": 3,
+      "completed_turns": 1,
+      "usage": {
+        "input_tokens": 95941,
+        "cached_input_tokens": 86656,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 213,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 96154
+      },
+      "reconciled_with_thread_total": true
+    },
+    {
+      "task_id": "P02",
+      "route": "wat",
+      "generator_context": "/root/trial_p02_wat",
+      "model_contexts": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra"
+        }
+      ],
+      "response_count": 2,
+      "completed_turns": 1,
+      "usage": {
+        "input_tokens": 64218,
+        "cached_input_tokens": 62464,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 387,
+        "reasoning_output_tokens": 229,
+        "total_tokens": 64605
+      },
+      "reconciled_with_thread_total": true
+    },
+    {
+      "task_id": "P03",
+      "route": "c",
+      "generator_context": "/root/trial_p03_c",
+      "model_contexts": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra"
+        }
+      ],
+      "response_count": 3,
+      "completed_turns": 1,
+      "usage": {
+        "input_tokens": 95967,
+        "cached_input_tokens": 94720,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 207,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 96174
+      },
+      "reconciled_with_thread_total": true
+    },
+    {
+      "task_id": "P03",
+      "route": "wat",
+      "generator_context": "/root/trial_p03_wat",
+      "model_contexts": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra"
+        }
+      ],
+      "response_count": 3,
+      "completed_turns": 1,
+      "usage": {
+        "input_tokens": 96091,
+        "cached_input_tokens": 93952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 305,
+        "reasoning_output_tokens": 49,
+        "total_tokens": 96396
+      },
+      "reconciled_with_thread_total": true
+    },
+    {
+      "task_id": "P04",
+      "route": "c",
+      "generator_context": "/root/trial_p04_c",
+      "model_contexts": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra"
+        }
+      ],
+      "response_count": 3,
+      "completed_turns": 1,
+      "usage": {
+        "input_tokens": 96048,
+        "cached_input_tokens": 93952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 190,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 96238
+      },
+      "reconciled_with_thread_total": true
+    },
+    {
+      "task_id": "P04",
+      "route": "wat",
+      "generator_context": "/root/trial_p04_wat",
+      "model_contexts": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra"
+        }
+      ],
+      "response_count": 3,
+      "completed_turns": 1,
+      "usage": {
+        "input_tokens": 95933,
+        "cached_input_tokens": 93696,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 208,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 96141
+      },
+      "reconciled_with_thread_total": true
+    },
+    {
+      "task_id": "P05",
+      "route": "c",
+      "generator_context": "/root/trial_p05_c",
+      "model_contexts": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra"
+        }
+      ],
+      "response_count": 3,
+      "completed_turns": 1,
+      "usage": {
+        "input_tokens": 96062,
+        "cached_input_tokens": 94592,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 170,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 96232
+      },
+      "reconciled_with_thread_total": true
+    },
+    {
+      "task_id": "P05",
+      "route": "wat",
+      "generator_context": "/root/trial_p05_wat",
+      "model_contexts": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra"
+        }
+      ],
+      "response_count": 3,
+      "completed_turns": 1,
+      "usage": {
+        "input_tokens": 96152,
+        "cached_input_tokens": 93952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 246,
+        "reasoning_output_tokens": 64,
+        "total_tokens": 96398
+      },
+      "reconciled_with_thread_total": true
+    },
+    {
+      "task_id": "P06",
+      "route": "c",
+      "generator_context": "/root/trial_p06_c",
+      "model_contexts": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra"
+        }
+      ],
+      "response_count": 3,
+      "completed_turns": 1,
+      "usage": {
+        "input_tokens": 95915,
+        "cached_input_tokens": 93952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 176,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 96091
+      },
+      "reconciled_with_thread_total": true
+    },
+    {
+      "task_id": "P06",
+      "route": "wat",
+      "generator_context": "/root/trial_p06_wat",
+      "model_contexts": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra"
+        }
+      ],
+      "response_count": 3,
+      "completed_turns": 1,
+      "usage": {
+        "input_tokens": 96168,
+        "cached_input_tokens": 93952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 244,
+        "reasoning_output_tokens": 47,
+        "total_tokens": 96412
+      },
+      "reconciled_with_thread_total": true
+    },
+    {
+      "task_id": "P07",
+      "route": "c",
+      "generator_context": "/root/trial_p07_c",
+      "model_contexts": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra"
+        }
+      ],
+      "response_count": 3,
+      "completed_turns": 1,
+      "usage": {
+        "input_tokens": 95929,
+        "cached_input_tokens": 93952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 207,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 96136
+      },
+      "reconciled_with_thread_total": true
+    },
+    {
+      "task_id": "P07",
+      "route": "wat",
+      "generator_context": "/root/trial_p07_wat",
+      "model_contexts": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra"
+        }
+      ],
+      "response_count": 3,
+      "completed_turns": 1,
+      "usage": {
+        "input_tokens": 96165,
+        "cached_input_tokens": 93952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 426,
+        "reasoning_output_tokens": 124,
+        "total_tokens": 96591
+      },
+      "reconciled_with_thread_total": true
+    },
+    {
+      "task_id": "P08",
+      "route": "c",
+      "generator_context": "/root/trial_p08_c",
+      "model_contexts": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra"
+        }
+      ],
+      "response_count": 3,
+      "completed_turns": 1,
+      "usage": {
+        "input_tokens": 96094,
+        "cached_input_tokens": 94976,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 349,
+        "reasoning_output_tokens": 142,
+        "total_tokens": 96443
+      },
+      "reconciled_with_thread_total": true
+    },
+    {
+      "task_id": "P08",
+      "route": "wat",
+      "generator_context": "/root/trial_p08_wat",
+      "model_contexts": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra"
+        }
+      ],
+      "response_count": 3,
+      "completed_turns": 1,
+      "usage": {
+        "input_tokens": 96124,
+        "cached_input_tokens": 93696,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 350,
+        "reasoning_output_tokens": 66,
+        "total_tokens": 96474
+      },
+      "reconciled_with_thread_total": true
+    },
+    {
+      "task_id": "P09",
+      "route": "c",
+      "generator_context": "/root/trial_p09_c",
+      "model_contexts": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra"
+        }
+      ],
+      "response_count": 3,
+      "completed_turns": 1,
+      "usage": {
+        "input_tokens": 95952,
+        "cached_input_tokens": 93952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 206,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 96158
+      },
+      "reconciled_with_thread_total": true
+    },
+    {
+      "task_id": "P09",
+      "route": "wat",
+      "generator_context": "/root/trial_p09_wat",
+      "model_contexts": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra"
+        }
+      ],
+      "response_count": 3,
+      "completed_turns": 1,
+      "usage": {
+        "input_tokens": 96239,
+        "cached_input_tokens": 94848,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 463,
+        "reasoning_output_tokens": 161,
+        "total_tokens": 96702
+      },
+      "reconciled_with_thread_total": true
+    },
+    {
+      "task_id": "P10",
+      "route": "c",
+      "generator_context": "/root/trial_p10_c",
+      "model_contexts": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra"
+        }
+      ],
+      "response_count": 3,
+      "completed_turns": 1,
+      "usage": {
+        "input_tokens": 95599,
+        "cached_input_tokens": 49024,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 338,
+        "reasoning_output_tokens": 104,
+        "total_tokens": 95937
+      },
+      "reconciled_with_thread_total": true
+    },
+    {
+      "task_id": "P10",
+      "route": "wat",
+      "generator_context": "/root/trial_p10_wat",
+      "model_contexts": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra"
+        }
+      ],
+      "response_count": 3,
+      "completed_turns": 1,
+      "usage": {
+        "input_tokens": 96302,
+        "cached_input_tokens": 93952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 537,
+        "reasoning_output_tokens": 178,
+        "total_tokens": 96839
+      },
+      "reconciled_with_thread_total": true
+    }
+  ],
+  "aggregate": {
+    "c": {
+      "jobs": 10,
+      "model_responses": 29,
+      "usage": {
+        "input_tokens": 927379,
+        "cached_input_tokens": 851456,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2133,
+        "reasoning_output_tokens": 246,
+        "total_tokens": 929512
+      }
+    },
+    "wat": {
+      "jobs": 10,
+      "model_responses": 28,
+      "usage": {
+        "input_tokens": 897309,
+        "cached_input_tokens": 869632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3262,
+        "reasoning_output_tokens": 918,
+        "total_tokens": 900571
+      }
+    }
+  },
+  "recovered_at": "2026-10-27T12:44:16.054348+00:00",
+  "configured_model_alias": "gpt-6.1-sol",
+  "configured_reasoning_effort": "ultra",
+  "backend_snapshot": null,
+  "combined_usage": {
+    "input_tokens": 1824688,
+    "cached_input_tokens": 1721088,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 5395,
+    "reasoning_output_tokens": 1164,
+    "total_tokens": 1830083
+  },
+  "api_price_equivalent": {
+    "assumptions": {
+      "model": "gpt-6.1-sol",
+      "mode": "hypothetical Standard API, short context",
+      "currency": "USD",
+      "per_million_ordinary_input": 2.0,
+      "per_million_cached_input": 0.1,
+      "per_million_output": 10.0,
+      "source": "https://developers.openai.com/api/docs/pricing",
+      "as_of": "2026-10-27",
+      "actual_Codex_billing": false
+    },
+    "by_route": {
+      "c": 0.2583216,
+      "wat": 0.17493720000000001
+    },
+    "combined": 0.4332588,
+    "actual_billed_cost": null
+  },
+  "limitations": [
+    "기존 JSONL에서 사용량 숫자와 모델 설정만 선별했다. 원시 로그·개인 경로·계정 식별자는 공개 사본에 넣지 않았다.",
+    "thread_id와 response_id로 중복 제거한 usage 합계가 각 생성기 마지막 thread_token_usage와 일치하는지 확인했다. 누적 event_msg 총량을 다시 더하지 않았다.",
+    "output_tokens에 reasoning_output_tokens가 포함된다. 캐시 입력은 input_tokens의 부분집합이다.",
+    "57개 응답은 도구 사용과 완료 보고를 포함한 모델 응답 수이며 코드 생성 시도는 20개다. 테스트 기반 수정은 0회다.",
+    "이 수치는 생성기20개에 한정한다. 주 에이전트·개발·검증 준비·검색·결과 정리의 사용량은 제외했다.",
+    "초기3개는 직접 프롬프트 전달, 이후는 프롬프트 파일 읽기 방식이었다. 캐시 적중 비율도 다르므로 경로 자체의 비용 우열로 해석하지 않는다.",
+    "단가 환산은 가상 Standard API 조건의 계산이다. 실제 Codex 구독 요금·사용 한도 차감·계정 청구액은 측정하지 않았다.",
+    "로그의 모델 별칭과 추론 설정은 확인했지만 공급자 API 원 응답과 백엔드 모델 snapshot, 순수 추론 지연은 복구하지 않았다."
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "protocol_id": "SS-002-BATCH-001",
+  "protocol_sha256": "ed6d965a68310bf3738b08276792ab1e1b2171a01f8eee8efd1526bda536298a",
+  "configuration": [
+    [
+      "gpt-6.1-sol",
+      "ultra"
+    ]
+  ],
+  "rows": [
+    {
+      "job": "r1-c",
+      "replicate": 1,
+      "route": "c",
+      "first_correct": 10,
+      "final_correct": 10,
+      "private_passed": 684,
+      "private_expected": 684,
+      "repairs": 0,
+      "usage": {
+        "input_tokens": 66014,
+        "cached_input_tokens": 62464,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 667,
+        "reasoning_output_tokens": 253,
+        "total_tokens": 66681
+      },
+      "agent_turn_elapsed_seconds": 23.509,
+      "response_count": 2,
+      "tool_call_counts": {
+        "exec": 1
+      },
+      "prompt_hash_match": null,
+      "cache_neutral_api_equivalent_usd": 0.138698,
+      "observed_cache_api_equivalent_usd": 0.0200164,
+      "final_body_bytes": 595,
+      "final_wasm_bytes": 3981,
+      "all_attempt_posthoc_wall_seconds": 28.003040299750865
+    },
+    {
+      "job": "r1-wat",
+      "replicate": 1,
+      "route": "wat",
+      "first_correct": 10,
+      "final_correct": 10,
+      "private_passed": 684,
+      "private_expected": 684,
+      "repairs": 0,
+      "usage": {
+        "input_tokens": 67055,
+        "cached_input_tokens": 65408,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1669,
+        "reasoning_output_tokens": 737,
+        "total_tokens": 68724
+      },
+      "agent_turn_elapsed_seconds": 39.682,
+      "response_count": 2,
+      "tool_call_counts": {
+        "exec": 1
+      },
+      "prompt_hash_match": null,
+      "cache_neutral_api_equivalent_usd": 0.1508,
+      "observed_cache_api_equivalent_usd": 0.026524799999999998,
+      "final_body_bytes": 1883,
+      "final_wasm_bytes": 941,
+      "all_attempt_posthoc_wall_seconds": 27.919775099493563
+    },
+    {
+      "job": "r2-wat",
+      "replicate": 2,
+      "route": "wat",
+      "first_correct": 10,
+      "final_correct": 10,
+      "private_passed": 684,
+      "private_expected": 684,
+      "repairs": 0,
+      "usage": {
+        "input_tokens": 67091,
+        "cached_input_tokens": 65408,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1705,
+        "reasoning_output_tokens": 751,
+        "total_tokens": 68796
+      },
+      "agent_turn_elapsed_seconds": 40.567,
+      "response_count": 2,
+      "tool_call_counts": {
+        "exec": 1
+      },
+      "prompt_hash_match": null,
+      "cache_neutral_api_equivalent_usd": 0.151232,
+      "observed_cache_api_equivalent_usd": 0.0269568,
+      "final_body_bytes": 2003,
+      "final_wasm_bytes": 967,
+      "all_attempt_posthoc_wall_seconds": 27.940656900173053
+    },
+    {
+      "job": "r2-c",
+      "replicate": 2,
+      "route": "c",
+      "first_correct": 10,
+      "final_correct": 10,
+      "private_passed": 684,
+      "private_expected": 684,
+      "repairs": 0,
+      "usage": {
+        "input_tokens": 66013,
+        "cached_input_tokens": 64384,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 665,
+        "reasoning_output_tokens": 102,
+        "total_tokens": 66678
+      },
+      "agent_turn_elapsed_seconds": 19.257,
+      "response_count": 2,
+      "tool_call_counts": {
+        "exec": 1
+      },
+      "prompt_hash_match": null,
+      "cache_neutral_api_equivalent_usd": 0.138676,
+      "observed_cache_api_equivalent_usd": 0.0163464,
+      "final_body_bytes": 814,
+      "final_wasm_bytes": 3981,
+      "all_attempt_posthoc_wall_seconds": 25.82838109973818
+    },
+    {
+      "job": "r3-c",
+      "replicate": 3,
+      "route": "c",
+      "first_correct": 10,
+      "final_correct": 10,
+      "private_passed": 684,
+      "private_expected": 684,
+      "repairs": 0,
+      "usage": {
+        "input_tokens": 66172,
+        "cached_input_tokens": 64512,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 824,
+        "reasoning_output_tokens": 188,
+        "total_tokens": 66996
+      },
+      "agent_turn_elapsed_seconds": 24.16,
+      "response_count": 2,
+      "tool_call_counts": {
+        "exec": 1
+      },
+      "prompt_hash_match": null,
+      "cache_neutral_api_equivalent_usd": 0.140584,
+      "observed_cache_api_equivalent_usd": 0.0180112,
+      "final_body_bytes": 951,
+      "final_wasm_bytes": 3981,
+      "all_attempt_posthoc_wall_seconds": 25.342691499739885
+    },
+    {
+      "job": "r3-wat",
+      "replicate": 3,
+      "route": "wat",
+      "first_correct": 10,
+      "final_correct": 10,
+      "private_passed": 684,
+      "private_expected": 684,
+      "repairs": 0,
+      "usage": {
+        "input_tokens": 66714,
+        "cached_input_tokens": 65024,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1328,
+        "reasoning_output_tokens": 376,
+        "total_tokens": 68042
+      },
+      "agent_turn_elapsed_seconds": 32.898,
+      "response_count": 2,
+      "tool_call_counts": {
+        "exec": 1
+      },
+      "prompt_hash_match": null,
+      "cache_neutral_api_equivalent_usd": 0.146708,
+      "observed_cache_api_equivalent_usd": 0.023162400000000003,
+      "final_body_bytes": 1955,
+      "final_wasm_bytes": 954,
+      "all_attempt_posthoc_wall_seconds": 26.404135399730876
+    }
+  ],
+  "paired": [
+    {
+      "replicate": 1,
+      "equal_correctness": true,
+      "wat_over_c_output_tokens": 2.502248875562219,
+      "wat_over_c_cache_neutral_cost": 1.087254322340625,
+      "c_cost_reduction_fraction": 0.08025198938992051
+    },
+    {
+      "replicate": 2,
+      "equal_correctness": true,
+      "wat_over_c_output_tokens": 2.56390977443609,
+      "wat_over_c_cache_neutral_cost": 1.090541982751161,
+      "c_cost_reduction_fraction": 0.0830247566652561
+    },
+    {
+      "replicate": 3,
+      "equal_correctness": true,
+      "wat_over_c_output_tokens": 1.6116504854368932,
+      "wat_over_c_cache_neutral_cost": 1.0435611449382576,
+      "c_cost_reduction_fraction": 0.041742781579736654
+    }
+  ],
+  "preregistered_primary_winner": "c",
+  "actual_billed_cost": null,
+  "generation_usage": {
+    "input_tokens": 399059,
+    "cached_input_tokens": 387200,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 6858,
+    "reasoning_output_tokens": 2407,
+    "total_tokens": 405917
+  },
+  "shared_supervision_usage": {
+    "input_tokens": 1836900,
+    "cached_input_tokens": 1806464,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 10921,
+    "reasoning_output_tokens": 346,
+    "total_tokens": 1847821
+  },
+  "primary_development_analysis_usage": null,
+  "benchmark_status": {
+    "P01": "passed",
+    "P02": "passed",
+    "P03": "passed",
+    "P04": "passed",
+    "P05": "passed",
+    "P06": "passed",
+    "P07": "passed",
+    "P08": "passed",
+    "P09": "passed",
+    "P10": "passed"
+  },
+  "analysis_script_sha256": "335afaf46ab72695ca71a7e5653aedf335bb85e9ca94995fc2cbf16209057485",
+  "limitations": [
+    "10 known pilot tasks generated as a batch; 3 paired batch repetitions only",
+    "API prices are hypothetical, not Codex billing",
+    "no provider-level output-token cap or backend snapshot",
+    "agent turn time includes queue and tool work",
+    "local background load uncontrolled and warm time includes common harness overhead",
+    "all inference usage includes tool instructions and file write acknowledgement; not just source-body tokens",
+    "planned prompts and dispatcher ledger retained; opaque logged inter-agent message transport prevents independent plaintext hash matching"
+  ]
+}
